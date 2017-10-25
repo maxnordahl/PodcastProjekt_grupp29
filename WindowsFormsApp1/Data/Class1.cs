@@ -16,17 +16,20 @@ namespace Data
         }
 
 
-        public List<FeedItem> GetFeed()
+        public void GetFeed()
         {
-
-
-
             //Ladda hem XML.
             var xml = "";
             using (var client = new System.Net.WebClient())
+            //client.Encoding = Encoding.UTF8;
+            //xml = client.DownloadString("http://www.aftonbladet.se/rss.xml");
+
+            //List<FeedItem> feedItem = new List<FeedItem>();
+
+            //foreach (SyndicationItem  )
+
             {
-                client.Encoding = Encoding.UTF8;
-                xml = client.DownloadString("http://www.aftonbladet.se/rss.xml");
+
             }
 
             //Skapa en objektrepresentation.
@@ -42,7 +45,7 @@ namespace Data
                 Console.WriteLine(title.InnerText);
 
             }
-
+            //return feedItem;
         }
     }
 }

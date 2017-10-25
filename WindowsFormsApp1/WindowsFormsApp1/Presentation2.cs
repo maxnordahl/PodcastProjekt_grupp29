@@ -10,17 +10,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Presentation : Form
+    public partial class Presentation2 : Form
     {
-        public Presentation()
+        public Presentation2()
         {
             InitializeComponent();
         }
 
-        private void btnPren_Click(object sender, EventArgs e)
-        {
-            Presentation2 presentation2 = new Presentation2();
-            presentation2.Show();
-        }
     }
 }
