@@ -17,5 +17,10 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        private void Presentation2_Load(object sender, EventArgs e)
+        {
+            //cbBoxPodCate ska fyllas i med listan Category
+}
+        }
     }
 }
