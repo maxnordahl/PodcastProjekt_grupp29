@@ -1,6 +1,8 @@
-﻿namespace Data
+﻿
+namespace Data
 {
     public class FeedItem
     {
+
     }
 }
