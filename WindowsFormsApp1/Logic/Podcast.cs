@@ -9,6 +9,7 @@ namespace Logic
         public string URL { get; set; }
         public string Titel { get; set; }
         public string Category { get; set; }
+        public int UpdateIntervall { get; set; }
         public string ReleaseDate { get; set; }
 
         private Podcast()
@@ -16,6 +17,7 @@ namespace Logic
             this.URL = URL;
             this.Titel = Titel;
             this.Category = Category;
+            this.UpdateIntervall = UpdateIntervall;
             this.ReleaseDate = ReleaseDate;
         }
 
@@ -31,6 +33,10 @@ namespace Logic
         {
             return Category;
         }
+        public int getUpdateIntervall()
+        {
+            return UpdateIntervall;
+        }
         public string getReleaseDate()
         {
             return ReleaseDate;
@@ -40,8 +46,8 @@ namespace Logic
         {
             var pods = new List<Podcast>
         {
-            new Podcast() { URL="", Titel = "", Category = "Favoriter", ReleaseDate = ""}
-        };
+                //new Podcast() { URL="", Titel = "", Category = "", UpdateIntervall = "", ReleaseDate = ""}
+            };
         }
 
         //foreach (Logic.Podcast enPod in Logic.Pods)

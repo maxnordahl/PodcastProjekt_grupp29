@@ -19,8 +19,11 @@ namespace WindowsFormsApp1
 
         private void Presentation2_Load(object sender, EventArgs e)
         {
-            //cbBoxPodCate ska fyllas i med listan Category
-}
+            var CateList = new Logic.Category();
+            var newList = CateList.CateLista();
+            cbBoxPodCate.DataSource = newList;
+            cbBoxPodCate.DisplayMember = "CateName";
         }
     }
 }
+
