@@ -33,7 +33,7 @@
             this.lblPodCate = new System.Windows.Forms.Label();
             this.lblPodUpdate = new System.Windows.Forms.Label();
             this.cbBoxPodUpdate = new System.Windows.Forms.ComboBox();
-            this.cbBoxPodCat = new System.Windows.Forms.ComboBox();
+            this.cbBoxPodCate = new System.Windows.Forms.ComboBox();
             this.btnPren = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -79,13 +79,13 @@
             this.cbBoxPodUpdate.Size = new System.Drawing.Size(121, 21);
             this.cbBoxPodUpdate.TabIndex = 4;
             // 
-            // cbBoxPodCat
+            // cbBoxPodCate
             // 
-            this.cbBoxPodCat.FormattingEnabled = true;
-            this.cbBoxPodCat.Location = new System.Drawing.Point(129, 103);
-            this.cbBoxPodCat.Name = "cbBoxPodCat";
-            this.cbBoxPodCat.Size = new System.Drawing.Size(121, 21);
-            this.cbBoxPodCat.TabIndex = 5;
+            this.cbBoxPodCate.FormattingEnabled = true;
+            this.cbBoxPodCate.Location = new System.Drawing.Point(129, 103);
+            this.cbBoxPodCate.Name = "cbBoxPodCate";
+            this.cbBoxPodCate.Size = new System.Drawing.Size(121, 21);
+            this.cbBoxPodCate.TabIndex = 5;
             // 
             // btnPren
             // 
@@ -102,7 +102,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.btnPren);
-            this.Controls.Add(this.cbBoxPodCat);
+            this.Controls.Add(this.cbBoxPodCate);
             this.Controls.Add(this.cbBoxPodUpdate);
             this.Controls.Add(this.lblPodUpdate);
             this.Controls.Add(this.lblPodCate);
@@ -110,6 +110,7 @@
             this.Controls.Add(this.txtBoxPodName);
             this.Name = "Presentation2";
             this.Text = "Presentation2";
+            this.Load += new System.EventHandler(this.Presentation2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,7 +123,7 @@
         private System.Windows.Forms.Label lblPodCate;
         private System.Windows.Forms.Label lblPodUpdate;
         private System.Windows.Forms.ComboBox cbBoxPodUpdate;
-        private System.Windows.Forms.ComboBox cbBoxPodCat;
+        private System.Windows.Forms.ComboBox cbBoxPodCate;
         private System.Windows.Forms.Button btnPren;
     }
 }

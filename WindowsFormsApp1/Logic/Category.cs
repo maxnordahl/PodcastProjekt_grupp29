@@ -6,12 +6,26 @@ namespace Logic
 {
     public class Category
     {
-        string name;
+        public string CateName { get; set; }
+        public List<Category> Cates { get; set; }
 
-        public Category(string name)
+        public Category()
         {
-            this.name = name;
+            this.CateName = CateName;
         }
 
+        public string getCateName()
+        {
+            return CateName;
+        }
+
+        public List<Category> CateLista()
+        {
+            var Cates = new List<Category>();
+            Cates.Add(new Category() { CateName="Favoriter"});
+            Cates.Add(new Category() { CateName = "Hälsa" });
+            return Cates;
+                 
+        }
     }
 }

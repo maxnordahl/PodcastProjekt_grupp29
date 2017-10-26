@@ -17,5 +17,13 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        private void Presentation2_Load(object sender, EventArgs e)
+        {
+            var CateList = new Logic.Category();
+            var newList = CateList.CateLista();
+            cbBoxPodCate.DataSource = newList;
+            cbBoxPodCate.DisplayMember = "CateName";
+        }
     }
 }
+
