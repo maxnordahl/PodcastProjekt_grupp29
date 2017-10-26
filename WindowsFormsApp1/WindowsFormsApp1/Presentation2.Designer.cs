@@ -35,11 +35,13 @@
             this.cbBoxPodUpdate = new System.Windows.Forms.ComboBox();
             this.cbBoxPodCate = new System.Windows.Forms.ComboBox();
             this.btnPren = new System.Windows.Forms.Button();
+            this.txtBoxURL = new System.Windows.Forms.TextBox();
+            this.lblURL = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtBoxPodName
             // 
-            this.txtBoxPodName.Location = new System.Drawing.Point(129, 54);
+            this.txtBoxPodName.Location = new System.Drawing.Point(129, 77);
             this.txtBoxPodName.Name = "txtBoxPodName";
             this.txtBoxPodName.Size = new System.Drawing.Size(121, 20);
             this.txtBoxPodName.TabIndex = 0;
@@ -47,7 +49,7 @@
             // lblPodName
             // 
             this.lblPodName.AutoSize = true;
-            this.lblPodName.Location = new System.Drawing.Point(32, 57);
+            this.lblPodName.Location = new System.Drawing.Point(32, 80);
             this.lblPodName.Name = "lblPodName";
             this.lblPodName.Size = new System.Drawing.Size(91, 13);
             this.lblPodName.TabIndex = 1;
@@ -56,7 +58,7 @@
             // lblPodCate
             // 
             this.lblPodCate.AutoSize = true;
-            this.lblPodCate.Location = new System.Drawing.Point(74, 106);
+            this.lblPodCate.Location = new System.Drawing.Point(74, 129);
             this.lblPodCate.Name = "lblPodCate";
             this.lblPodCate.Size = new System.Drawing.Size(49, 13);
             this.lblPodCate.TabIndex = 2;
@@ -65,7 +67,7 @@
             // lblPodUpdate
             // 
             this.lblPodUpdate.AutoSize = true;
-            this.lblPodUpdate.Location = new System.Drawing.Point(14, 158);
+            this.lblPodUpdate.Location = new System.Drawing.Point(14, 180);
             this.lblPodUpdate.Name = "lblPodUpdate";
             this.lblPodUpdate.Size = new System.Drawing.Size(109, 13);
             this.lblPodUpdate.TabIndex = 3;
@@ -74,7 +76,7 @@
             // cbBoxPodUpdate
             // 
             this.cbBoxPodUpdate.FormattingEnabled = true;
-            this.cbBoxPodUpdate.Location = new System.Drawing.Point(129, 155);
+            this.cbBoxPodUpdate.Location = new System.Drawing.Point(129, 177);
             this.cbBoxPodUpdate.Name = "cbBoxPodUpdate";
             this.cbBoxPodUpdate.Size = new System.Drawing.Size(121, 21);
             this.cbBoxPodUpdate.TabIndex = 4;
@@ -82,25 +84,44 @@
             // cbBoxPodCate
             // 
             this.cbBoxPodCate.FormattingEnabled = true;
-            this.cbBoxPodCate.Location = new System.Drawing.Point(129, 103);
+            this.cbBoxPodCate.Location = new System.Drawing.Point(129, 126);
             this.cbBoxPodCate.Name = "cbBoxPodCate";
             this.cbBoxPodCate.Size = new System.Drawing.Size(121, 21);
             this.cbBoxPodCate.TabIndex = 5;
             // 
             // btnPren
             // 
-            this.btnPren.Location = new System.Drawing.Point(153, 205);
+            this.btnPren.Location = new System.Drawing.Point(322, 126);
             this.btnPren.Name = "btnPren";
             this.btnPren.Size = new System.Drawing.Size(75, 23);
             this.btnPren.TabIndex = 6;
             this.btnPren.Text = "Prenumerera";
             this.btnPren.UseVisualStyleBackColor = true;
+            this.btnPren.Click += new System.EventHandler(this.btnPren_Click);
+            // 
+            // txtBoxURL
+            // 
+            this.txtBoxURL.Location = new System.Drawing.Point(129, 30);
+            this.txtBoxURL.Name = "txtBoxURL";
+            this.txtBoxURL.Size = new System.Drawing.Size(293, 20);
+            this.txtBoxURL.TabIndex = 7;
+            // 
+            // lblURL
+            // 
+            this.lblURL.AutoSize = true;
+            this.lblURL.Location = new System.Drawing.Point(91, 33);
+            this.lblURL.Name = "lblURL";
+            this.lblURL.Size = new System.Drawing.Size(32, 13);
+            this.lblURL.TabIndex = 8;
+            this.lblURL.Text = "URL:";
             // 
             // Presentation2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(480, 232);
+            this.Controls.Add(this.lblURL);
+            this.Controls.Add(this.txtBoxURL);
             this.Controls.Add(this.btnPren);
             this.Controls.Add(this.cbBoxPodCate);
             this.Controls.Add(this.cbBoxPodUpdate);
@@ -125,5 +146,7 @@
         private System.Windows.Forms.ComboBox cbBoxPodUpdate;
         private System.Windows.Forms.ComboBox cbBoxPodCate;
         private System.Windows.Forms.Button btnPren;
+        internal System.Windows.Forms.TextBox txtBoxURL;
+        private System.Windows.Forms.Label lblURL;
     }
 }

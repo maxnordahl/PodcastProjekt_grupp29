@@ -4,21 +4,20 @@ using System.Text;
 
 namespace Logic
 {
-    class Podcast
+    public class Podcast
     {
         public string URL { get; set; }
         public string Titel { get; set; }
         public string Category { get; set; }
         public int UpdateIntervall { get; set; }
-        public string ReleaseDate { get; set; }
+     
 
-        private Podcast()
+        public Podcast()
         {
             this.URL = URL;
             this.Titel = Titel;
             this.Category = Category;
             this.UpdateIntervall = UpdateIntervall;
-            this.ReleaseDate = ReleaseDate;
         }
 
         public string getURL()
@@ -37,17 +36,18 @@ namespace Logic
         {
             return UpdateIntervall;
         }
-        public string getReleaseDate()
+
+        public void URLtoRSSReader()
         {
-            return ReleaseDate;
+            var newURL = getURL();
+            var newRSS = new RSSReader(newURL) ;
+            newRSS.getFeed();
         }
 
-        private static void PodLista()
+        public List<Podcast> PodLista()
         {
-            var pods = new List<Podcast>
-        {
-                //new Podcast() { URL="", Titel = "", Category = "", UpdateIntervall = "", ReleaseDate = ""}
-            };
+            var Pods = new List<Podcast>();
+            return Pods;
         }
 
         //foreach (Logic.Podcast enPod in Logic.Pods)

@@ -27,10 +27,29 @@ namespace WindowsFormsApp1
         {
             {
                 var CateList = new Logic.Category();
-                var newList = CateList.CateLista();
-                lstBoxCategories.DataSource = newList;
+                var newCateList = CateList.CateLista();
+                lstBoxCategories.DataSource = newCateList;
                 lstBoxCategories.DisplayMember = "CateName";
             }
+
+        }
+
+        public void txtBoxURL_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstBoxCategories_Click(object sender, EventArgs e)
+        {
+            var PodList = new Logic.Podcast();
+            var newPodList = PodList.PodLista();
+
+            if (lstBoxCategories.SelectedItem != null)
+                {
+                lstBoxCategories.DataSource = newPodList;
+                lstBoxCategories.DisplayMember = "Titel";
+            }
+            
         }
     }
 }
