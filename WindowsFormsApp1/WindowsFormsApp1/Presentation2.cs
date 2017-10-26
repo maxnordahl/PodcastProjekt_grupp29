@@ -19,10 +19,16 @@ namespace WindowsFormsApp1
 
         private void Presentation2_Load(object sender, EventArgs e)
         {
-            var CateList = new Logic.Category();
-            var newList = CateList.CateLista();
-            cbBoxPodCate.DataSource = newList;
+            var category = new Logic.Category();
+            var cateList = category.CateLista();
+            cbBoxPodCate.DataSource = cateList;
             cbBoxPodCate.DisplayMember = "CateName";
+
+            var updateInterval = new Logic.UpdateInterval();
+            var updateIntList = updateInterval.TidLista();
+            cbBoxPodUpdate.DataSource = updateIntList;
+            cbBoxPodUpdate.DisplayMember = "Tid";
+
         }
     }
 }
