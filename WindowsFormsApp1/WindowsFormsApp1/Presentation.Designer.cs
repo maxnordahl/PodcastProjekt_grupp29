@@ -73,6 +73,8 @@
             this.lstBoxEpisode.Name = "lstBoxEpisode";
             this.lstBoxEpisode.Size = new System.Drawing.Size(228, 199);
             this.lstBoxEpisode.TabIndex = 5;
+            this.lstBoxEpisode.Click += new System.EventHandler(this.lstBoxEpisode_Click);
+            this.lstBoxEpisode.SelectedIndexChanged += new System.EventHandler(this.lstBoxEpisode_SelectedIndexChanged);
             // 
             // lblCategories
             // 

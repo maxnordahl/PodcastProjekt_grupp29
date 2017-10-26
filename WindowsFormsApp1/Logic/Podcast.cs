@@ -47,5 +47,6 @@ namespace Logic
 
         public static List<Podcast> MyProperty { get; set; } = new List<Podcast>();
 
+
     }
 }

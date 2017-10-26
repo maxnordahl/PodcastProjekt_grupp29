@@ -45,18 +45,42 @@ namespace WindowsFormsApp1
 
             if (lstBoxCategories.SelectedItem != null)
             {
-                lstBoxPodcast.DataSource = Podcast.MyProperty;
-                lstBoxPodcast.DisplayMember = "Titel";
+                var category = lstBoxCategories.SelectedItem as Category;
+
+                        lstBoxPodcast.DataSource = Podcast.MyProperty
+                    .Where(items => items.Category.Equals(category.CateName))
+                    .ToList();
+                        lstBoxPodcast.DisplayMember = "Titel";
+                    
             }
         }
 
         private void lstBoxPodcast_click(object sender, EventArgs e)
         {
-            if (lstBoxPodcast.SelectedItem != null)
-            {
-                lstBoxEpisode.DataSource = Podcast.Episodes;
-                lstBoxEpisode.DisplayMember = "titel";
-            }
+
+            //if (lstBoxPodcast.SelectedItem != null)
+
+            //    var Pod = lstBoxPodcast.SelectedItem as Titel;
+            //{
+            //    lstBoxPodcast.DataSource = Podcast.MyProperty
+            //    .Where(items => items.Episode)
+            //    .ToList();
+            //    lstBoxPodcast.DisplayMember = "titel";
+
+
+                    
+
+            //}
+        }
+
+        private void lstBoxEpisode_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstBoxEpisode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
