@@ -34,9 +34,13 @@ namespace Logic
             //Iterera igenom elementet item.
             foreach (System.Xml.XmlNode item in dom.DocumentElement.SelectNodes("channel/item"))
             {
-                //Skriv ut dess titel.
-                var title = item.SelectSingleNode("title");
-                Console.WriteLine(title.InnerText);
+                var newEpisode = new Episode();
+                newEpisode.titel = item.SelectSingleNode("title").InnerText;
+                newEpisode.pubDate = item.SelectSingleNode("pubDate").InnerText;
+                newEpisode.link = item.SelectSingleNode("link").InnerText;
+                newEpisode.description = item.SelectSingleNode("description").InnerText;
+                EpisodeList.Add(newEpisode);
+
             }
 
             return EpisodeList;

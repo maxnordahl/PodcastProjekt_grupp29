@@ -6,11 +6,11 @@ namespace Logic
 {
     public class Podcast
     {
-        public string URL { get; set; }
-        public string Titel { get; set; }
+        public string URL { get; set; } = "";
+        public string Titel { get; set; } = "";
         public string Category { get; set; }
         public int UpdateIntervall { get; set; }
-     
+        public static List<Episode> Episodes { get; set; }
 
         public Podcast()
         {
@@ -18,6 +18,7 @@ namespace Logic
             this.Titel = Titel;
             this.Category = Category;
             this.UpdateIntervall = UpdateIntervall;
+            Episodes = new List<Episode>(); ;
         }
 
         public string getURL()
@@ -41,19 +42,10 @@ namespace Logic
         {
             var newURL = getURL();
             var newRSS = new RSSReader(newURL) ;
-            newRSS.getFeed();
+            Episodes = newRSS.getFeed();
         }
 
-        public List<Podcast> PodLista()
-        {
-            var Pods = new List<Podcast>();
-            return Pods;
-        }
-
-        //foreach (Logic.Podcast enPod in Logic.Pods)
-        //{
-        //    Console.WriteLine(enPod. + "  " + theGalaxy.MegaLightYears);
-        //}
+        public static List<Podcast> MyProperty { get; set; } = new List<Podcast>();
 
     }
 }

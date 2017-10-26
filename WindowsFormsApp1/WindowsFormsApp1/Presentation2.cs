@@ -40,6 +40,12 @@ namespace WindowsFormsApp1
 
             var newPod = new Logic.Podcast() {URL= url, Titel = name, Category = category, UpdateIntervall = updateTime};
             newPod.URLtoRSSReader();
+
+            Logic.Podcast.MyProperty.Add(newPod);
+
+            MessageBox.Show("Prenumerationen är skapad");
+            this.Close();
+
         }
     }
 }

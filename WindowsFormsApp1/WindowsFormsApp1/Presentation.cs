@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,17 +40,23 @@ namespace WindowsFormsApp1
 
         }
 
-        private void lstBoxCategories_Click(object sender, EventArgs e)
+        private void lstBoxCategories_Click_1(object sender, EventArgs e)
         {
-            var PodList = new Logic.Podcast();
-            var newPodList = PodList.PodLista();
 
             if (lstBoxCategories.SelectedItem != null)
-                {
-                lstBoxCategories.DataSource = newPodList;
-                lstBoxCategories.DisplayMember = "Titel";
+            {
+                lstBoxPodcast.DataSource = Podcast.MyProperty;
+                lstBoxPodcast.DisplayMember = "Titel";
             }
-            
+        }
+
+        private void lstBoxPodcast_click(object sender, EventArgs e)
+        {
+            if (lstBoxPodcast.SelectedItem != null)
+            {
+                lstBoxEpisode.DataSource = Podcast.Episodes;
+                lstBoxEpisode.DisplayMember = "titel";
+            }
         }
     }
 }

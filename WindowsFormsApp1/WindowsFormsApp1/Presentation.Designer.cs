@@ -55,6 +55,7 @@
             this.lstBoxCategories.Name = "lstBoxCategories";
             this.lstBoxCategories.Size = new System.Drawing.Size(228, 199);
             this.lstBoxCategories.TabIndex = 3;
+            this.lstBoxCategories.Click += new System.EventHandler(this.lstBoxCategories_Click_1);
             // 
             // lstBoxPodcast
             // 
@@ -63,6 +64,7 @@
             this.lstBoxPodcast.Name = "lstBoxPodcast";
             this.lstBoxPodcast.Size = new System.Drawing.Size(228, 199);
             this.lstBoxPodcast.TabIndex = 4;
+            this.lstBoxPodcast.Click += new System.EventHandler(this.lstBoxPodcast_click);
             // 
             // lstBoxEpisode
             // 
