@@ -30,6 +30,23 @@ namespace WindowsFormsApp1
             cbBoxPodUpdate.DisplayMember = "Tid";
 
         }
+
+        private void btnPren_Click(object sender, EventArgs e)
+        {
+            string url = txtBoxURL.Text;
+            string name = txtBoxPodName.Text;
+            string category = cbBoxPodCate.Text;
+            int updateTime = Int32.Parse(cbBoxPodUpdate.Text);
+
+            var newPod = new Logic.Podcast() {URL= url, Titel = name, Category = category, UpdateIntervall = updateTime};
+            newPod.URLtoRSSReader();
+
+            Logic.Podcast.MyProperty.Add(newPod);
+
+            MessageBox.Show("Prenumerationen är skapad");
+            this.Close();
+
+        }
     }
 }
 

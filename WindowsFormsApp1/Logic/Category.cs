@@ -25,7 +25,6 @@ namespace Logic
             Cates.Add(new Category() { CateName="Favoriter"});
             Cates.Add(new Category() { CateName = "Hälsa" });
             return Cates;
-                 
         }
     }
 }

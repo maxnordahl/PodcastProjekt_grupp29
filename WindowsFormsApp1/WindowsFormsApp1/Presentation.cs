@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,9 +28,34 @@ namespace WindowsFormsApp1
         {
             {
                 var CateList = new Logic.Category();
-                var newList = CateList.CateLista();
-                lstBoxCategories.DataSource = newList;
+                var newCateList = CateList.CateLista();
+                lstBoxCategories.DataSource = newCateList;
                 lstBoxCategories.DisplayMember = "CateName";
+            }
+
+        }
+
+        public void txtBoxURL_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstBoxCategories_Click_1(object sender, EventArgs e)
+        {
+
+            if (lstBoxCategories.SelectedItem != null)
+            {
+                lstBoxPodcast.DataSource = Podcast.MyProperty;
+                lstBoxPodcast.DisplayMember = "Titel";
+            }
+        }
+
+        private void lstBoxPodcast_click(object sender, EventArgs e)
+        {
+            if (lstBoxPodcast.SelectedItem != null)
+            {
+                lstBoxEpisode.DataSource = Podcast.Episodes;
+                lstBoxEpisode.DisplayMember = "titel";
             }
         }
     }

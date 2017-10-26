@@ -4,21 +4,21 @@ using System.Text;
 
 namespace Logic
 {
-    class Podcast
+    public class Podcast
     {
-        public string URL { get; set; }
-        public string Titel { get; set; }
+        public string URL { get; set; } = "";
+        public string Titel { get; set; } = "";
         public string Category { get; set; }
         public int UpdateIntervall { get; set; }
-        public string ReleaseDate { get; set; }
+        public static List<Episode> Episodes { get; set; }
 
-        private Podcast()
+        public Podcast()
         {
             this.URL = URL;
             this.Titel = Titel;
             this.Category = Category;
             this.UpdateIntervall = UpdateIntervall;
-            this.ReleaseDate = ReleaseDate;
+            Episodes = new List<Episode>(); ;
         }
 
         public string getURL()
@@ -37,23 +37,15 @@ namespace Logic
         {
             return UpdateIntervall;
         }
-        public string getReleaseDate()
+
+        public void URLtoRSSReader()
         {
-            return ReleaseDate;
+            var newURL = getURL();
+            var newRSS = new RSSReader(newURL) ;
+            Episodes = newRSS.getFeed();
         }
 
-        private static void PodLista()
-        {
-            var pods = new List<Podcast>
-        {
-                //new Podcast() { URL="", Titel = "", Category = "", UpdateIntervall = "", ReleaseDate = ""}
-            };
-        }
-
-        //foreach (Logic.Podcast enPod in Logic.Pods)
-        //{
-        //    Console.WriteLine(enPod. + "  " + theGalaxy.MegaLightYears);
-        //}
+        public static List<Podcast> MyProperty { get; set; } = new List<Podcast>();
 
     }
 }
