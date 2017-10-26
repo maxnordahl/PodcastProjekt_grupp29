@@ -53,7 +53,7 @@
             this.lstBoxCategories.FormattingEnabled = true;
             this.lstBoxCategories.Location = new System.Drawing.Point(54, 154);
             this.lstBoxCategories.Name = "lstBoxCategories";
-            this.lstBoxCategories.Size = new System.Drawing.Size(228, 199);
+            this.lstBoxCategories.Size = new System.Drawing.Size(340, 304);
             this.lstBoxCategories.TabIndex = 3;
             this.lstBoxCategories.Click += new System.EventHandler(this.lstBoxCategories_Click_1);
             // 
@@ -79,9 +79,10 @@
             // lblCategories
             // 
             this.lblCategories.AutoSize = true;
-            this.lblCategories.Location = new System.Drawing.Point(51, 138);
+            this.lblCategories.Location = new System.Drawing.Point(76, 212);
+            this.lblCategories.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategories.Name = "lblCategories";
-            this.lblCategories.Size = new System.Drawing.Size(55, 13);
+            this.lblCategories.Size = new System.Drawing.Size(82, 20);
             this.lblCategories.TabIndex = 6;
             this.lblCategories.Text = "Kategorier";
             // 
@@ -105,7 +106,7 @@
             // 
             // Presentation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 517);
             this.Controls.Add(this.lblEpisode);
@@ -115,7 +116,6 @@
             this.Controls.Add(this.lstBoxPodcast);
             this.Controls.Add(this.lstBoxCategories);
             this.Controls.Add(this.btnPren);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Presentation";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Presentation_Load);
