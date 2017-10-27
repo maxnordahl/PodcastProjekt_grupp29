@@ -31,6 +31,7 @@ namespace WindowsFormsApp1
                 var newCateList = CateList.CateLista();
                 lstBoxCategories.DataSource = newCateList;
                 lstBoxCategories.DisplayMember = "CateName";
+
             }
 
         }
@@ -58,20 +59,38 @@ namespace WindowsFormsApp1
         private void lstBoxPodcast_click(object sender, EventArgs e)
         {
 
-            //if (lstBoxPodcast.SelectedItem != null)
+            //ta fram alla titlar ur lista episodes för den podcasten som är vald
 
-            //    var Pod = lstBoxPodcast.SelectedItem as Titel;
-            //{
+            if (lstBoxPodcast.SelectedItem != null)
+            {
+                var pod = lstBoxPodcast.SelectedItem as Podcast;
+                
+
+                lstBoxPodcast.DataSource = Podcast.MyProperty
+                .Where(items => items == pod)
+                .ToList();
+                lstBoxEpisode.DisplayMember = "titel";
+
+
+            }
+
+            //if (lstBoxPodcast.SelectedItem != null)
+            //{ 
+            //    var pod = lstBoxPodcast.SelectedItem as Podcast;
+
             //    lstBoxPodcast.DataSource = Podcast.MyProperty
-            //    .Where(items => items.Episode)
+            //    .Where(items => items.Equals(pod))
+
             //    .ToList();
             //    lstBoxPodcast.DisplayMember = "titel";
 
+            //var Episodes = new Logic.Episode();
+            //var newEpisodes = CateList.CateLista();
+            //lstBoxCategories.DataSource = newEpisodes;
+            //lstBoxCategories.DisplayMember = "titel";
 
-                    
-
-            //}
         }
+        
 
         private void lstBoxEpisode_Click(object sender, EventArgs e)
         {
