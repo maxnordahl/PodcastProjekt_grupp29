@@ -38,12 +38,12 @@ namespace Logic
             return UpdateIntervall;
         }
 
-        public void URLtoRSSReader()
-        {
-            var newURL = getURL();
-            var newRSS = new RSSReader(newURL) ;
-            Episodes = newRSS.getFeed();
-        }
+        //public async void URLtoRSSReader()
+        //{
+        //    var newURL = getURL();
+        //    var newRSS = new RSSReader() ;
+        //    Episodes = await newRSS.getFeed(url);
+        //}
 
         public static List<Podcast> MyProperty { get; set; } = new List<Podcast>();
 

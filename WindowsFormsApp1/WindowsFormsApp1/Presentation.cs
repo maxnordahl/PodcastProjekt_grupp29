@@ -13,6 +13,8 @@ namespace WindowsFormsApp1
 {
     public partial class Presentation : Form
     {
+        RSSReader RSSReader = new RSSReader();
+
         public Presentation()
         {
             InitializeComponent();
@@ -31,6 +33,9 @@ namespace WindowsFormsApp1
                 var newCateList = CateList.CateLista();
                 lstBoxCategories.DataSource = newCateList;
                 lstBoxCategories.DisplayMember = "CateName";
+
+                
+
             }
 
         }
@@ -55,11 +60,20 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void lstBoxPodcast_click(object sender, EventArgs e)
+        private async void lstBoxPodcast_click(object sender, EventArgs e)
         {
+            
+        
+            if (lstBoxPodcast.SelectedItem != null)
+            {
+                Podcast selectedItem = lstBoxPodcast.SelectedItem as Podcast;
+                string url = selectedItem.URL;
+                var episodeList = await RSSReader.getFeed(url);
 
-            //if (lstBoxPodcast.SelectedItem != null)
-
+                lstBoxEpisode.DataSource = null;
+                lstBoxEpisode.DataSource = episodeList;
+                lstBoxEpisode.DisplayMember = "titel";
+            }
             //    var Pod = lstBoxPodcast.SelectedItem as Titel;
             //{
             //    lstBoxPodcast.DataSource = Podcast.MyProperty
@@ -79,6 +93,11 @@ namespace WindowsFormsApp1
         }
 
         private void lstBoxEpisode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstBoxCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
