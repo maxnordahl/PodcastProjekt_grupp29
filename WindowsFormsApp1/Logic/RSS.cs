@@ -1,30 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Logic
 {
 
     public class RSSReader
     {
-        string url;
-
-        public RSSReader(string url)
-        {
-            this.url = url;
-        }
-
-        public List<Episode> getFeed()
+        
+      
+        public async Task<List<Episode>> getFeed(string url)
         {
 
             var EpisodeList = new List<Episode>();
 
             //Ladda hem XML.
             var xml = "";
+            var feedOfPodcasts = new List<Episode>();
             using (var client = new System.Net.WebClient())
             {
                 client.Encoding = Encoding.UTF8;
-                xml = client.DownloadString(url);
+                await Task.Run(() => xml = client.DownloadString(url));
             }
 
             //Skapa en objektrepresentation.

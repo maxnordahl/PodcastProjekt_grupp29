@@ -39,10 +39,10 @@
             // 
             // btnPren
             // 
-            this.btnPren.Location = new System.Drawing.Point(203, 28);
+            this.btnPren.Location = new System.Drawing.Point(425, 22);
             this.btnPren.Margin = new System.Windows.Forms.Padding(2);
             this.btnPren.Name = "btnPren";
-            this.btnPren.Size = new System.Drawing.Size(106, 43);
+            this.btnPren.Size = new System.Drawing.Size(161, 61);
             this.btnPren.TabIndex = 0;
             this.btnPren.Text = "Ny prenumeration";
             this.btnPren.UseVisualStyleBackColor = true;
@@ -51,27 +51,31 @@
             // lstBoxCategories
             // 
             this.lstBoxCategories.FormattingEnabled = true;
-            this.lstBoxCategories.Location = new System.Drawing.Point(54, 154);
+            this.lstBoxCategories.ItemHeight = 20;
+            this.lstBoxCategories.Location = new System.Drawing.Point(2, 131);
             this.lstBoxCategories.Name = "lstBoxCategories";
-            this.lstBoxCategories.Size = new System.Drawing.Size(340, 304);
+            this.lstBoxCategories.Size = new System.Drawing.Size(216, 384);
             this.lstBoxCategories.TabIndex = 3;
             this.lstBoxCategories.Click += new System.EventHandler(this.lstBoxCategories_Click_1);
+            this.lstBoxCategories.SelectedIndexChanged += new System.EventHandler(this.lstBoxCategories_SelectedIndexChanged);
             // 
             // lstBoxPodcast
             // 
             this.lstBoxPodcast.FormattingEnabled = true;
-            this.lstBoxPodcast.Location = new System.Drawing.Point(326, 154);
+            this.lstBoxPodcast.ItemHeight = 20;
+            this.lstBoxPodcast.Location = new System.Drawing.Point(246, 131);
             this.lstBoxPodcast.Name = "lstBoxPodcast";
-            this.lstBoxPodcast.Size = new System.Drawing.Size(228, 199);
+            this.lstBoxPodcast.Size = new System.Drawing.Size(340, 384);
             this.lstBoxPodcast.TabIndex = 4;
             this.lstBoxPodcast.Click += new System.EventHandler(this.lstBoxPodcast_click);
             // 
             // lstBoxEpisode
             // 
             this.lstBoxEpisode.FormattingEnabled = true;
-            this.lstBoxEpisode.Location = new System.Drawing.Point(605, 154);
+            this.lstBoxEpisode.ItemHeight = 20;
+            this.lstBoxEpisode.Location = new System.Drawing.Point(615, 131);
             this.lstBoxEpisode.Name = "lstBoxEpisode";
-            this.lstBoxEpisode.Size = new System.Drawing.Size(228, 199);
+            this.lstBoxEpisode.Size = new System.Drawing.Size(409, 384);
             this.lstBoxEpisode.TabIndex = 5;
             this.lstBoxEpisode.Click += new System.EventHandler(this.lstBoxEpisode_Click);
             this.lstBoxEpisode.SelectedIndexChanged += new System.EventHandler(this.lstBoxEpisode_SelectedIndexChanged);
@@ -79,7 +83,7 @@
             // lblCategories
             // 
             this.lblCategories.AutoSize = true;
-            this.lblCategories.Location = new System.Drawing.Point(76, 212);
+            this.lblCategories.Location = new System.Drawing.Point(13, 97);
             this.lblCategories.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategories.Name = "lblCategories";
             this.lblCategories.Size = new System.Drawing.Size(82, 20);
@@ -89,18 +93,18 @@
             // lblPodcast
             // 
             this.lblPodcast.AutoSize = true;
-            this.lblPodcast.Location = new System.Drawing.Point(323, 138);
+            this.lblPodcast.Location = new System.Drawing.Point(260, 97);
             this.lblPodcast.Name = "lblPodcast";
-            this.lblPodcast.Size = new System.Drawing.Size(46, 13);
+            this.lblPodcast.Size = new System.Drawing.Size(67, 20);
             this.lblPodcast.TabIndex = 7;
             this.lblPodcast.Text = "Podcast";
             // 
             // lblEpisode
             // 
             this.lblEpisode.AutoSize = true;
-            this.lblEpisode.Location = new System.Drawing.Point(602, 138);
+            this.lblEpisode.Location = new System.Drawing.Point(632, 97);
             this.lblEpisode.Name = "lblEpisode";
-            this.lblEpisode.Size = new System.Drawing.Size(39, 13);
+            this.lblEpisode.Size = new System.Drawing.Size(57, 20);
             this.lblEpisode.TabIndex = 8;
             this.lblEpisode.Text = "Avsnitt";
             // 
@@ -108,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 517);
+            this.ClientSize = new System.Drawing.Size(1029, 574);
             this.Controls.Add(this.lblEpisode);
             this.Controls.Add(this.lblPodcast);
             this.Controls.Add(this.lblCategories);

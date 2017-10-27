@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
             int updateTime = Int32.Parse(cbBoxPodUpdate.Text);
 
             var newPod = new Logic.Podcast() {URL= url, Titel = name, Category = category, UpdateIntervall = updateTime};
-            newPod.URLtoRSSReader();
+            //newPod.URLtoRSSReader();
 
             Logic.Podcast.MyProperty.Add(newPod);
 

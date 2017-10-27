@@ -13,6 +13,8 @@ namespace WindowsFormsApp1
 {
     public partial class Presentation : Form
     {
+        RSSReader RSSReader = new RSSReader();
+
         public Presentation()
         {
             InitializeComponent();
@@ -56,28 +58,22 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void lstBoxPodcast_click(object sender, EventArgs e)
+        private async void lstBoxPodcast_click(object sender, EventArgs e)
         {
-
-            //ta fram alla titlar ur lista episodes för den podcasten som är vald
-
+            
+        
             if (lstBoxPodcast.SelectedItem != null)
             {
-                var pod = lstBoxPodcast.SelectedItem as Podcast;
-                
+                Podcast selectedItem = lstBoxPodcast.SelectedItem as Podcast;
+                string url = selectedItem.URL;
+                var episodeList = await RSSReader.getFeed(url);
 
-                lstBoxPodcast.DataSource = Podcast.MyProperty
-                .Where(items => items == pod)
-                .ToList();
+                lstBoxEpisode.DataSource = null;
+                lstBoxEpisode.DataSource = episodeList;
                 lstBoxEpisode.DisplayMember = "titel";
-
-
             }
-
-            //if (lstBoxPodcast.SelectedItem != null)
-            //{ 
-            //    var pod = lstBoxPodcast.SelectedItem as Podcast;
-
+            //    var Pod = lstBoxPodcast.SelectedItem as Titel;
+            //{
             //    lstBoxPodcast.DataSource = Podcast.MyProperty
             //    .Where(items => items.Equals(pod))
 
@@ -98,6 +94,11 @@ namespace WindowsFormsApp1
         }
 
         private void lstBoxEpisode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstBoxCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
