@@ -90,6 +90,8 @@ namespace WindowsFormsApp1
 
         private void lstBoxEpisode_Click(object sender, EventArgs e)
         {
+            Episode selectedEp = lstBoxEpisode.SelectedItem as Episode;
+            System.Diagnostics.Process.Start(@"c:\myPDF.pdf");
 
         }
 
@@ -101,6 +103,12 @@ namespace WindowsFormsApp1
         private void lstBoxCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            Presentation3 presentation3 = new Presentation3();
+            presentation3.Show();
         }
     }
 }

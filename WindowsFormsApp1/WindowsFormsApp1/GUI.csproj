@@ -57,6 +57,12 @@
     <Compile Include="Presentation2.Designer.cs">
       <DependentUpon>Presentation2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation3.Designer.cs">
+      <DependentUpon>Presentation3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation.resx">
@@ -64,6 +70,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation2.resx">
       <DependentUpon>Presentation2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation3.resx">
+      <DependentUpon>Presentation3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

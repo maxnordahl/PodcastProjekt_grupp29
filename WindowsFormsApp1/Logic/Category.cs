@@ -7,7 +7,6 @@ namespace Logic
     public class Category
     {
         public string CateName { get; set; }
-        public List<Category> Cates { get; set; }
 
         public Category()
         {
@@ -19,13 +18,18 @@ namespace Logic
             return CateName;
         }
 
+        List<Category> Cates { get; set; } = new List<Category>();
+
         public List<Category> CateLista()
         {
-            var Cates = new List<Category>();
             Cates.Add(new Category() { CateName="Favoriter"});
             Cates.Add(new Category() { CateName = "Hälsa" });
             return Cates;
-  
+        }
+
+        public void RemoveCateFromList(Category cate)
+        {
+            Cates.Remove(cate);
         }
     }
 }

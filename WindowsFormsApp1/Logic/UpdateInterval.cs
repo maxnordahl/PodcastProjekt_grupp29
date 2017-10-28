@@ -7,7 +7,6 @@ namespace Logic
     public class UpdateInterval
     {
         public int Tid { get; set; }
-        public List<UpdateInterval> Tider { get; set; }
 
         public UpdateInterval()
         {
