@@ -106,7 +106,6 @@ namespace WindowsFormsApp1
         {
             Presentation3 presentation3 = new Presentation3();
             presentation3.Show();
-
         }
     }
 }
