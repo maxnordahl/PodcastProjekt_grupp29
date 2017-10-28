@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Presentation : Form
+    public partial class Inställningar : Form
     {
         RSSReader RSSReader = new RSSReader();
 
-        public Presentation()
+        public Inställningar()
         {
             InitializeComponent();
         }
@@ -118,7 +118,7 @@ namespace WindowsFormsApp1
             axWindowsMediaPlayer1.URL = fileLocation;
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
+        private void btnSettings_click(object sender, EventArgs e)
         {
             Presentation3 presentation3 = new Presentation3();
             presentation3.Show();
