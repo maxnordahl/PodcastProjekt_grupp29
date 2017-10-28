@@ -7,7 +7,7 @@ namespace Logic
     public class Category
     {
         public string CateName { get; set; }
-        public List<Category> Cates { get; set; }
+        
 
         public Category()
         {
