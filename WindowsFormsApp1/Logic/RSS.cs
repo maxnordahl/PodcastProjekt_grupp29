@@ -34,7 +34,8 @@ namespace Logic
                 var newEpisode = new Episode();
                 newEpisode.titel = item.SelectSingleNode("title").InnerText;
                 newEpisode.pubDate = item.SelectSingleNode("pubDate").InnerText;
-                newEpisode.link = item.SelectSingleNode("link").InnerText;
+                newEpisode.link = item.SelectSingleNode("enclosure/@url").InnerXml;
+                
                 newEpisode.description = item.SelectSingleNode("description").InnerText;
                 EpisodeList.Add(newEpisode);
 
