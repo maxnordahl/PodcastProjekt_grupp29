@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,10 +29,8 @@ namespace WindowsFormsApp1
  
         private void button1_Click(object sender, EventArgs e)
         {
-            var category = new Logic.Category();
-            Logic.Category x = cbBoxCate.SelectedItem as Logic.Category;
-            category.RemoveCateFromList(x);
-        }
+
+        } 
 
         private void cbBoxCate_SelectedIndexChanged(object sender, EventArgs e)
         {

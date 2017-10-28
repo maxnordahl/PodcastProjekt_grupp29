@@ -33,7 +33,7 @@
             this.txtBoxNewName = new System.Windows.Forms.TextBox();
             this.btnChangeNameCate = new System.Windows.Forms.Button();
             this.lblNewName = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cbBoxCate
@@ -79,22 +79,22 @@
             this.lblNewName.TabIndex = 5;
             this.lblNewName.Text = "Nytt namn:";
             // 
-            // button1
+            // btnRemove
             // 
-            this.button1.Location = new System.Drawing.Point(253, 113);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRemove.Location = new System.Drawing.Point(40, 113);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.TabIndex = 6;
+            this.btnRemove.Text = "Ta bort";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.button1_Click);
             // 
             // Presentation3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 347);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(367, 347);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.lblNewName);
             this.Controls.Add(this.btnChangeNameCate);
             this.Controls.Add(this.txtBoxNewName);
@@ -115,6 +115,6 @@
         private System.Windows.Forms.TextBox txtBoxNewName;
         private System.Windows.Forms.Button btnChangeNameCate;
         private System.Windows.Forms.Label lblNewName;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRemove;
     }
 }

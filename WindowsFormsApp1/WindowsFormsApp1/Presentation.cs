@@ -61,8 +61,8 @@ namespace WindowsFormsApp1
 
         private async void lstBoxPodcast_click(object sender, EventArgs e)
         {
-            
-        
+
+
             if (lstBoxPodcast.SelectedItem != null)
             {
                 Podcast selectedItem = lstBoxPodcast.SelectedItem as Podcast;
@@ -73,19 +73,6 @@ namespace WindowsFormsApp1
                 lstBoxEpisode.DataSource = episodeList;
                 lstBoxEpisode.DisplayMember = "titel";
             }
-            //    var Pod = lstBoxPodcast.SelectedItem as Titel;
-            //{
-            //    lstBoxPodcast.DataSource = Podcast.MyProperty
-            //    .Where(items => items.Equals(pod))
-
-            //    .ToList();
-            //    lstBoxPodcast.DisplayMember = "titel";
-
-            //var Episodes = new Logic.Episode();
-            //var newEpisodes = CateList.CateLista();
-            //lstBoxCategories.DataSource = newEpisodes;
-            //lstBoxCategories.DisplayMember = "titel";
-
         }
         
 
@@ -105,10 +92,6 @@ namespace WindowsFormsApp1
                 
         }
 
-        private void lstBoxEpisode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
         {
@@ -122,6 +105,7 @@ namespace WindowsFormsApp1
         {
             Presentation3 presentation3 = new Presentation3();
             presentation3.Show();
+
         }
     }
 }
