@@ -17,12 +17,17 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        //private void Presentation3_Load(object sender, EventArgs e)
-        //{
-        //    var category = new Logic.Category();
-        //    var cateList = category.CateLista();
-        //    cbBoxCate.DataSource = cateList;
-        //    cbBoxCate.DisplayMember = "CateName";
-        //}
+        private void Presentation3_Load(object sender, EventArgs e)
+        {
+            var category = new Logic.Category();
+            var cateList = category.CateLista();
+            cmBoxCateName.DataSource = cateList;
+            cmBoxCateName.DisplayMember = "CateName";
+
+            //var pod = new Logic.Podcast();
+            //var podList = pod.MyProperty();
+            //cmBoxPods.DataSource = podList;
+            //cmBoxPods.DisplayMember = "titel";
+        }
     }
 }
