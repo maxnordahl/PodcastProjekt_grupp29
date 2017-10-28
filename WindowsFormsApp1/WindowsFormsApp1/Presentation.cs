@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -88,21 +89,33 @@ namespace WindowsFormsApp1
         }
         
 
-        private void lstBoxEpisode_Click(object sender, EventArgs e)
+        private void lstBoxEpisode_DoubleClick(object sender, EventArgs e)
         {
-            Episode selectedEp = lstBoxEpisode.SelectedItem as Episode;
-            System.Diagnostics.Process.Start(@"c:\myPDF.pdf");
+            Episode episodeLink = lstBoxEpisode.SelectedItem as Episode;
+            var valdLink = episodeLink.link;
+            Episode titel = lstBoxEpisode.SelectedItem as Episode;
+            var namn = titel.titel;
+            string fileLocation = Environment.CurrentDirectory + namn + ".mp3";
+            using (var client = new WebClient())
+            {
+                client.DownloadFile(valdLink, fileLocation);
+                MessageBox.Show("Filen har nu laddats ner");
+            }
 
+                
         }
 
         private void lstBoxEpisode_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void lstBoxCategories_SelectedIndexChanged(object sender, EventArgs e)
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
         {
-
+            Episode titel = lstBoxEpisode.SelectedItem as Episode;
+            var namn = titel.titel;
+            string fileLocation = Environment.CurrentDirectory + namn + ".mp3";
+            axWindowsMediaPlayer1.URL = fileLocation;
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
