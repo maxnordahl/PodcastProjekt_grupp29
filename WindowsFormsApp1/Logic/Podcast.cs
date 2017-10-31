@@ -9,43 +9,21 @@ namespace Logic
         public string URL { get; set; } = "";
         public string Titel { get; set; } = "";
         public string Category { get; set; }
-        public int UpdateIntervall { get; set; }
-        public static List<Episode> Episodes { get; set; }
+        public int UpdateInterval { get; set; }
+        public List<Episode> Episodes { get; set; }
 
         public Podcast()
         {
             this.URL = URL;
             this.Titel = Titel;
             this.Category = Category;
-            this.UpdateIntervall = UpdateIntervall;
-            Episodes = new List<Episode>(); ;
+            this.UpdateInterval = UpdateInterval;
+            Episodes = new List<Episode>();
         }
 
-        public string getURL()
-        {
-            return URL;
-        }
-        public string getTitel()
-        {
-            return Titel;
-        }
-        public string getCategory()
-        {
-            return Category;
-        }
-        public int getUpdateIntervall()
-        {
-            return UpdateIntervall;
-        }
 
-        //public async void URLtoRSSReader()
-        //{
-        //    var newURL = getURL();
-        //    var newRSS = new RSSReader() ;
-        //    Episodes = await newRSS.getFeed(url);
-        //}
 
-        public static List<Podcast> MyProperty { get; set; } = new List<Podcast>();
+        public static List<Podcast> PodList { get; set; } = new List<Podcast>();
 
 
     }

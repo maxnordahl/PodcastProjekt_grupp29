@@ -26,13 +26,5 @@ namespace Logic
             return CateName;
         }
 
-        //List<Category> Cates { get; set; } = new List<Category>();
-
-        //public List<Category> CateLista()
-        //{
-        //    Cates.Add(new Category() { CateName="Favoriter"});
-        //    Cates.Add(new Category() { CateName = "Hälsa" });
-        //    return Cates;
-        //}
     }
 }

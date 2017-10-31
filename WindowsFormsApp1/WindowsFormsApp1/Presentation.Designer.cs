@@ -78,6 +78,7 @@
             this.lstBoxEpisode.Name = "lstBoxEpisode";
             this.lstBoxEpisode.Size = new System.Drawing.Size(274, 251);
             this.lstBoxEpisode.TabIndex = 5;
+            this.lstBoxEpisode.SelectedIndexChanged += new System.EventHandler(this.lstBoxEpisode_SelectedIndexChanged);
             this.lstBoxEpisode.DoubleClick += new System.EventHandler(this.lstBoxEpisode_DoubleClick);
             // 
             // lblCategories
@@ -138,7 +139,7 @@
             this.lblDownload.Size = new System.Drawing.Size(0, 13);
             this.lblDownload.TabIndex = 11;
             // 
-            // Presentation
+            // Inställningar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

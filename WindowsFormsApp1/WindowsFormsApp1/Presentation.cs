@@ -16,10 +16,10 @@ namespace WindowsFormsApp1
     {
         RSSReader RSSReader = new RSSReader();
 
-        public Inställningar(List<Podcast> MyProperty)
+        public Inställningar(List<Podcast> PodList)
         {
             InitializeComponent();
-            this.MyProperty = MyProperty;
+            this.PodList = PodList;
         }
 
         private void btnPren_Click(object sender, EventArgs e)
@@ -30,17 +30,86 @@ namespace WindowsFormsApp1
 
         List<Category> Cate2 = new List<Category>();
 
-        public List<Podcast> MyProperty { get; }
+        public List<Podcast> PodList { get; }
 
         public void Presentation_Load(object sender, EventArgs e)
 
+        { 
+            lstBoxCategories.DataSource = Cate2;
+            lstBoxCategories.DisplayMember = "CateName";
+
+            System.Windows.Forms.Timer timerMin = new System.Windows.Forms.Timer();
+            timerMin.Tick += timerMinAsync;
+            timerMin.Interval = 60000;
+            timerMin.Start();
+            System.Windows.Forms.Timer timerHour = new System.Windows.Forms.Timer();
+            timerHour.Tick += timerHourAsync;
+            timerHour.Interval = 3600000;
+            timerHour.Start();
+            System.Windows.Forms.Timer timerDay = new System.Windows.Forms.Timer();
+            timerDay.Tick += timerDayAsync;
+            timerDay.Interval = 216000000;
+            timerDay.Start();
+        }
+
+       public async void timerMinAsync(object sender, EventArgs e)
         {
-            
-                lstBoxCategories.DataSource = Cate2;
-                lstBoxCategories.DisplayMember = "CateName";
+            int time = 60000;
 
-            
+            List<Podcast> podList = Podcast.PodList
+                 .Where(items => items.UpdateInterval.Equals(time))
+                 .ToList();
 
+            if (podList != null)
+            {
+                foreach (Podcast podcast in podList)
+                {
+                    string url = podcast.URL;
+                    var newEpisodeList = await RSSReader.getFeed(url);
+                    podcast.Episodes = newEpisodeList;
+                    MessageBox.Show("Podcasten är uppdaterad");
+                }
+            }
+        }
+
+        public async void timerHourAsync(object sender, EventArgs e)
+        {
+            int time = 3600000;
+
+            List<Podcast> podList = Podcast.PodList
+                 .Where(items => items.UpdateInterval.Equals(time))
+                 .ToList();
+
+            if (podList != null)
+            {
+                foreach (Podcast podcast in podList)
+                {
+                    string url = podcast.URL;
+                    var newEpisodeList = await RSSReader.getFeed(url);
+                    podcast.Episodes = newEpisodeList;
+                    MessageBox.Show("Podcasten är uppdaterad");
+                }
+            }
+        }
+
+        public async void timerDayAsync(object sender, EventArgs e)
+        {
+            int time = 216000000;
+
+            List<Podcast> podList = Podcast.PodList
+                 .Where(items => items.UpdateInterval.Equals(time))
+                 .ToList();
+
+            if (podList != null)
+            {
+                foreach (Podcast podcast in podList)
+                {
+                    string url = podcast.URL;
+                    var newEpisodeList = await RSSReader.getFeed(url);
+                    podcast.Episodes = newEpisodeList;
+                    MessageBox.Show("Podcasten är uppdaterad");
+                }
+            }
         }
 
         public void lstBoxCategories_Click_1(object sender, EventArgs e)
@@ -50,7 +119,7 @@ namespace WindowsFormsApp1
             {
                 var category = lstBoxCategories.SelectedItem as Category;
 
-                        lstBoxPodcast.DataSource = Podcast.MyProperty
+                        lstBoxPodcast.DataSource = Podcast.PodList
                     .Where(items => items.Category.Equals(category.CateName))
                     .ToList();
                         lstBoxPodcast.DisplayMember = "Titel";
@@ -66,10 +135,10 @@ namespace WindowsFormsApp1
             {
                 Podcast selectedItem = lstBoxPodcast.SelectedItem as Podcast;
                 string url = selectedItem.URL;
-                var episodeList = await RSSReader.getFeed(url);
+                
 
                 lstBoxEpisode.DataSource = null;
-                lstBoxEpisode.DataSource = episodeList;
+                lstBoxEpisode.DataSource = selectedItem.Episodes;
                 lstBoxEpisode.DisplayMember = "titel";
             }
         }
@@ -103,8 +172,22 @@ namespace WindowsFormsApp1
 
         private void btnSettings_click(object sender, EventArgs e)
         {
-            Presentation3 presentation3 = new Presentation3(Cate2, MyProperty);
+            Presentation3 presentation3 = new Presentation3(Cate2, PodList);
             presentation3.Show();
+
+            presentation3.FormClosed += Presentation3_FormClosed;
+        }
+
+        private void Presentation3_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            lstBoxCategories.DataSource = null;
+            lstBoxCategories.DataSource = Cate2;
+            lstBoxCategories.DisplayMember = "CateName";
+        }
+
+        private void lstBoxEpisode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

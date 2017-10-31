@@ -8,7 +8,6 @@ namespace Logic
 
     public class RSSReader
     {
-        
       
         public async Task<List<Episode>> getFeed(string url)
         {

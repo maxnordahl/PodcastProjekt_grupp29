@@ -43,6 +43,7 @@
             this.lblNewCateName = new System.Windows.Forms.Label();
             this.btnNewCate = new System.Windows.Forms.Button();
             this.txtBoxNewCateName2 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCate
@@ -57,7 +58,7 @@
             // 
             // btnRemoveCate
             // 
-            this.btnRemoveCate.Location = new System.Drawing.Point(31, 116);
+            this.btnRemoveCate.Location = new System.Drawing.Point(40, 110);
             this.btnRemoveCate.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveCate.Name = "btnRemoveCate";
             this.btnRemoveCate.Size = new System.Drawing.Size(50, 21);
@@ -68,7 +69,7 @@
             // 
             // btnChangeCateName
             // 
-            this.btnChangeCateName.Location = new System.Drawing.Point(99, 116);
+            this.btnChangeCateName.Location = new System.Drawing.Point(101, 110);
             this.btnChangeCateName.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeCateName.Name = "btnChangeCateName";
             this.btnChangeCateName.Size = new System.Drawing.Size(86, 21);
@@ -78,7 +79,7 @@
             // 
             // txtBoxNewName
             // 
-            this.txtBoxNewName.Location = new System.Drawing.Point(71, 167);
+            this.txtBoxNewName.Location = new System.Drawing.Point(71, 148);
             this.txtBoxNewName.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxNewName.Name = "txtBoxNewName";
             this.txtBoxNewName.Size = new System.Drawing.Size(82, 20);
@@ -105,7 +106,7 @@
             // lblNewName
             // 
             this.lblNewName.AutoSize = true;
-            this.lblNewName.Location = new System.Drawing.Point(87, 152);
+            this.lblNewName.Location = new System.Drawing.Point(87, 133);
             this.lblNewName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNewName.Name = "lblNewName";
             this.lblNewName.Size = new System.Drawing.Size(58, 13);
@@ -159,7 +160,7 @@
             // lblNewCateName
             // 
             this.lblNewCateName.AutoSize = true;
-            this.lblNewCateName.Location = new System.Drawing.Point(68, 252);
+            this.lblNewCateName.Location = new System.Drawing.Point(70, 230);
             this.lblNewCateName.Name = "lblNewCateName";
             this.lblNewCateName.Size = new System.Drawing.Size(75, 13);
             this.lblNewCateName.TabIndex = 9;
@@ -167,7 +168,7 @@
             // 
             // btnNewCate
             // 
-            this.btnNewCate.Location = new System.Drawing.Point(40, 294);
+            this.btnNewCate.Location = new System.Drawing.Point(40, 272);
             this.btnNewCate.Name = "btnNewCate";
             this.btnNewCate.Size = new System.Drawing.Size(125, 23);
             this.btnNewCate.TabIndex = 10;
@@ -177,16 +178,26 @@
             // 
             // txtBoxNewCateName2
             // 
-            this.txtBoxNewCateName2.Location = new System.Drawing.Point(40, 268);
+            this.txtBoxNewCateName2.Location = new System.Drawing.Point(40, 246);
             this.txtBoxNewCateName2.Name = "txtBoxNewCateName2";
             this.txtBoxNewCateName2.Size = new System.Drawing.Size(125, 20);
             this.txtBoxNewCateName2.TabIndex = 11;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(276, 108);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(141, 23);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Ta bort prenumeration";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // Presentation3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(501, 356);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.txtBoxNewCateName2);
             this.Controls.Add(this.btnNewCate);
             this.Controls.Add(this.lblNewCateName);
@@ -229,5 +240,6 @@
         private System.Windows.Forms.Label lblNewCateName;
         private System.Windows.Forms.Button btnNewCate;
         private System.Windows.Forms.TextBox txtBoxNewCateName2;
+        private System.Windows.Forms.Button button3;
     }
 }
