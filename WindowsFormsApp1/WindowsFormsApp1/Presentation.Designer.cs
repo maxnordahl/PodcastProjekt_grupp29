@@ -134,7 +134,7 @@
             // lblDownload
             // 
             this.lblDownload.AutoSize = true;
-            this.lblDownload.Location = new System.Drawing.Point(924, 656);
+            this.lblDownload.Location = new System.Drawing.Point(609, 417);
             this.lblDownload.Name = "lblDownload";
             this.lblDownload.Size = new System.Drawing.Size(0, 13);
             this.lblDownload.TabIndex = 11;

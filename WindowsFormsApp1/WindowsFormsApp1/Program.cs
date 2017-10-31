@@ -9,7 +9,7 @@ namespace WindowsFormsApp1
 {
     static class Program
     {
-        public static List<Podcast> MyProperty { get; private set; }
+        public static List<Podcast> PodList { get; private set; }
 
         /// <summary>
         /// The main entry point for the application.
@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inställningar(MyProperty));
+            Application.Run(new Inställningar(PodList));
         }
     }
 }

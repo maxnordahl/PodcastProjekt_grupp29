@@ -14,23 +14,22 @@ namespace WindowsFormsApp1
     {
         private readonly List<Logic.Category> Cate2;
 
-        public List<Logic.Podcast> MyProperty { get; }
-
-        public Presentation3(List<Logic.Category> Cate2, List<Logic.Podcast> MyProperty)
+        public Presentation3(List<Logic.Category> Cate2, List<Logic.Podcast> PodList)
         {
             InitializeComponent();
             this.Cate2 = Cate2;
-            this.MyProperty = MyProperty;
+            this.PodList = PodList;
         }
+
+        public List<Logic.Podcast> PodList { get; }
 
         private void Presentation3_Load(object sender, EventArgs e)
         {
             cmBoxCateName.DataSource = Cate2;
             cmBoxCateName.DisplayMember = "CateName";
 
-            cmBoxPods.DataSource = MyProperty;
-            cmBoxPods.DisplayMember = "titel";
-
+            cmBoxPods.DataSource = PodList;
+            cmBoxPods.DisplayMember = "Titel";
         }
 
         private void btnRemoveCate_Click(object sender, EventArgs e)
@@ -51,8 +50,16 @@ namespace WindowsFormsApp1
             cmBoxCateName.DataSource = null;
             cmBoxCateName.DataSource = Cate2;
             cmBoxCateName.DisplayMember = "CateName";
+        }
 
-            //updatera Presentation
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //Podcast removePod = 
+            //Logic.Podcast.PodList.Remove(removePod);
+        }
+
+        private void cmBoxPods_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }

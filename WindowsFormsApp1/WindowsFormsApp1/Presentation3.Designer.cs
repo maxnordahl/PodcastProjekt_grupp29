@@ -156,6 +156,7 @@
             this.cmBoxPods.Name = "cmBoxPods";
             this.cmBoxPods.Size = new System.Drawing.Size(82, 21);
             this.cmBoxPods.TabIndex = 8;
+            this.cmBoxPods.SelectedIndexChanged += new System.EventHandler(this.cmBoxPods_SelectedIndexChanged);
             // 
             // lblNewCateName
             // 
@@ -191,6 +192,7 @@
             this.button3.TabIndex = 12;
             this.button3.Text = "Ta bort prenumeration";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Presentation3
             // 
@@ -219,12 +221,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblCate;
         private System.Windows.Forms.Button btnRemoveCate;
         private System.Windows.Forms.Button btnChangeCateName;

@@ -127,7 +127,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private async void lstBoxPodcast_click(object sender, EventArgs e)
+        private void lstBoxPodcast_click(object sender, EventArgs e)
         {
 
 

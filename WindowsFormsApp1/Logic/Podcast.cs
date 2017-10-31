@@ -21,8 +21,6 @@ namespace Logic
             Episodes = new List<Episode>();
         }
 
-
-
         public static List<Podcast> PodList { get; set; } = new List<Podcast>();
 
 
