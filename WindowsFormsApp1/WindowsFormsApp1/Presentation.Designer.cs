@@ -44,9 +44,10 @@
             // 
             // btnPren
             // 
-            this.btnPren.Location = new System.Drawing.Point(266, 63);
+            this.btnPren.Location = new System.Drawing.Point(177, 41);
+            this.btnPren.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPren.Name = "btnPren";
-            this.btnPren.Size = new System.Drawing.Size(160, 62);
+            this.btnPren.Size = new System.Drawing.Size(107, 40);
             this.btnPren.TabIndex = 0;
             this.btnPren.Text = "Ny prenumeration";
             this.btnPren.UseVisualStyleBackColor = true;
@@ -55,63 +56,55 @@
             // lstBoxCategories
             // 
             this.lstBoxCategories.FormattingEnabled = true;
-            this.lstBoxCategories.ItemHeight = 20;
-            this.lstBoxCategories.Location = new System.Drawing.Point(75, 251);
-            this.lstBoxCategories.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lstBoxCategories.Location = new System.Drawing.Point(50, 163);
             this.lstBoxCategories.Name = "lstBoxCategories";
-            this.lstBoxCategories.Size = new System.Drawing.Size(216, 384);
+            this.lstBoxCategories.Size = new System.Drawing.Size(145, 251);
             this.lstBoxCategories.TabIndex = 3;
             this.lstBoxCategories.Click += new System.EventHandler(this.lstBoxCategories_Click_1);
             // 
             // lstBoxPodcast
             // 
             this.lstBoxPodcast.FormattingEnabled = true;
-            this.lstBoxPodcast.ItemHeight = 20;
-            this.lstBoxPodcast.Location = new System.Drawing.Point(432, 251);
-            this.lstBoxPodcast.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lstBoxPodcast.Location = new System.Drawing.Point(288, 163);
             this.lstBoxPodcast.Name = "lstBoxPodcast";
-            this.lstBoxPodcast.Size = new System.Drawing.Size(340, 384);
+            this.lstBoxPodcast.Size = new System.Drawing.Size(228, 251);
             this.lstBoxPodcast.TabIndex = 4;
             this.lstBoxPodcast.Click += new System.EventHandler(this.lstBoxPodcast_click);
             // 
             // lstBoxEpisode
             // 
             this.lstBoxEpisode.FormattingEnabled = true;
-            this.lstBoxEpisode.ItemHeight = 20;
-            this.lstBoxEpisode.Location = new System.Drawing.Point(918, 251);
-            this.lstBoxEpisode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lstBoxEpisode.Location = new System.Drawing.Point(612, 163);
             this.lstBoxEpisode.Name = "lstBoxEpisode";
-            this.lstBoxEpisode.Size = new System.Drawing.Size(409, 384);
+            this.lstBoxEpisode.Size = new System.Drawing.Size(274, 251);
             this.lstBoxEpisode.TabIndex = 5;
             this.lstBoxEpisode.DoubleClick += new System.EventHandler(this.lstBoxEpisode_DoubleClick);
             // 
             // lblCategories
             // 
             this.lblCategories.AutoSize = true;
-            this.lblCategories.Location = new System.Drawing.Point(146, 202);
-            this.lblCategories.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblCategories.Location = new System.Drawing.Point(97, 131);
+            this.lblCategories.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategories.Name = "lblCategories";
-            this.lblCategories.Size = new System.Drawing.Size(82, 20);
+            this.lblCategories.Size = new System.Drawing.Size(55, 13);
             this.lblCategories.TabIndex = 6;
             this.lblCategories.Text = "Kategorier";
             // 
             // lblPodcast
             // 
             this.lblPodcast.AutoSize = true;
-            this.lblPodcast.Location = new System.Drawing.Point(558, 202);
-            this.lblPodcast.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPodcast.Location = new System.Drawing.Point(372, 131);
             this.lblPodcast.Name = "lblPodcast";
-            this.lblPodcast.Size = new System.Drawing.Size(67, 20);
+            this.lblPodcast.Size = new System.Drawing.Size(46, 13);
             this.lblPodcast.TabIndex = 7;
             this.lblPodcast.Text = "Podcast";
             // 
             // lblEpisode
             // 
             this.lblEpisode.AutoSize = true;
-            this.lblEpisode.Location = new System.Drawing.Point(1082, 202);
-            this.lblEpisode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEpisode.Location = new System.Drawing.Point(721, 131);
             this.lblEpisode.Name = "lblEpisode";
-            this.lblEpisode.Size = new System.Drawing.Size(57, 20);
+            this.lblEpisode.Size = new System.Drawing.Size(39, 13);
             this.lblEpisode.TabIndex = 8;
             this.lblEpisode.Text = "Avsnitt";
             // 
@@ -128,9 +121,10 @@
             // 
             // btnSettings
             // 
-            this.btnSettings.Location = new System.Drawing.Point(549, 63);
+            this.btnSettings.Location = new System.Drawing.Point(366, 41);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(160, 62);
+            this.btnSettings.Size = new System.Drawing.Size(107, 40);
             this.btnSettings.TabIndex = 10;
             this.btnSettings.Text = "Inställningar";
             this.btnSettings.UseVisualStyleBackColor = true;
@@ -146,7 +140,7 @@
             // 
             // Inställningar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1808, 883);
             this.Controls.Add(this.lblDownload);
@@ -159,6 +153,7 @@
             this.Controls.Add(this.lstBoxPodcast);
             this.Controls.Add(this.lstBoxCategories);
             this.Controls.Add(this.btnPren);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Inställningar";
             this.Text = "btnSettings";
             this.Load += new System.EventHandler(this.Presentation_Load);

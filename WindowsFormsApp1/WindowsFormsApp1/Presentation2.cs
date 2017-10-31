@@ -14,16 +14,17 @@ namespace WindowsFormsApp1
 {
     public partial class Presentation2 : Form
     {
-        public Presentation2()
+        public List<Logic.Category> Cate2 { get; }
+
+        public Presentation2(List<Logic.Category> Cate2)
         {
             InitializeComponent();
+            this.Cate2 = Cate2;
         }
 
         private void Presentation2_Load(object sender, EventArgs e)
         {
-            var category = new Logic.Category();
-            var cateList = category.CateLista();
-            cbBoxPodCate.DataSource = cateList;
+            cbBoxPodCate.DataSource = Cate2;
             cbBoxPodCate.DisplayMember = "CateName";
 
             var updateInterval = new Logic.UpdateInterval();

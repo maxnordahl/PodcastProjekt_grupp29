@@ -23,16 +23,16 @@ namespace WindowsFormsApp1
 
         private void btnPren_Click(object sender, EventArgs e)
         {
-            Presentation2 presentation2 = new Presentation2();
+            Presentation2 presentation2 = new Presentation2(Cate2);
             presentation2.Show();
         }
 
+        List<Category> Cate2 = new List<Category>(); 
         private void Presentation_Load(object sender, EventArgs e)
+
         {
             {
-                var CateList = new Logic.Category();
-                var newCateList = CateList.CateLista();
-                lstBoxCategories.DataSource = newCateList;
+                lstBoxCategories.DataSource = Cate2;
                 lstBoxCategories.DisplayMember = "CateName";
 
             }
@@ -100,12 +100,11 @@ namespace WindowsFormsApp1
             var namn = titel.titel;
             string fileLocation = Environment.CurrentDirectory + namn + ".mp3";
             axWindowsMediaPlayer1.URL = fileLocation;
-            
         }
 
         private void btnSettings_click(object sender, EventArgs e)
         {
-            Presentation3 presentation3 = new Presentation3();
+            Presentation3 presentation3 = new Presentation3(Cate2);
             presentation3.Show();
         }
     }

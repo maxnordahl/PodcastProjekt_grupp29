@@ -12,22 +12,35 @@ namespace WindowsFormsApp1
 {
     public partial class Presentation3 : Form
     {
-        public Presentation3()
+        private readonly List<Logic.Category> Cate2;
+
+        public Presentation3(List<Logic.Category> Cate2)
         {
             InitializeComponent();
+            this.Cate2 = Cate2;
         }
 
         private void Presentation3_Load(object sender, EventArgs e)
         {
-            var category = new Logic.Category();
-            var cateList = category.CateLista();
-            cmBoxCateName.DataSource = cateList;
+            cmBoxCateName.DataSource = Cate2;
             cmBoxCateName.DisplayMember = "CateName";
 
-            //var pod = new Logic.Podcast();
-            //var podList = pod.MyProperty();
-            //cmBoxPods.DataSource = podList;
-            //cmBoxPods.DisplayMember = "titel";
+        }
+
+        private void btnRemoveCate_Click(object sender, EventArgs e)
+        {
+            string CateName = cmBoxCateName.Text;
+            Cate2.Remove(cmBoxCateName.SelectedItem as Logic.Category);
+            MessageBox.Show("Kategorin " + CateName + " har tagits bort.");
+
+        }
+
+        private void btnNewCate_Click(object sender, EventArgs e)
+        {
+            var newCate = new Logic.Category(txtBoxNewCateName2.Text);
+
+            Cate2.Add(newCate as Logic.Category);
+            MessageBox.Show("Kategorin " + newCate.CateName + " har lagts till.");
         }
     }
 }
