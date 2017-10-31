@@ -41,59 +41,66 @@
             // 
             // txtBoxPodName
             // 
-            this.txtBoxPodName.Location = new System.Drawing.Point(129, 77);
+            this.txtBoxPodName.Location = new System.Drawing.Point(194, 118);
+            this.txtBoxPodName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxPodName.Name = "txtBoxPodName";
-            this.txtBoxPodName.Size = new System.Drawing.Size(121, 20);
+            this.txtBoxPodName.Size = new System.Drawing.Size(180, 26);
             this.txtBoxPodName.TabIndex = 0;
             // 
             // lblPodName
             // 
             this.lblPodName.AutoSize = true;
-            this.lblPodName.Location = new System.Drawing.Point(32, 80);
+            this.lblPodName.Location = new System.Drawing.Point(48, 123);
+            this.lblPodName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPodName.Name = "lblPodName";
-            this.lblPodName.Size = new System.Drawing.Size(91, 13);
+            this.lblPodName.Size = new System.Drawing.Size(134, 20);
             this.lblPodName.TabIndex = 1;
             this.lblPodName.Text = "Namnge podcast:";
             // 
             // lblPodCate
             // 
             this.lblPodCate.AutoSize = true;
-            this.lblPodCate.Location = new System.Drawing.Point(74, 129);
+            this.lblPodCate.Location = new System.Drawing.Point(111, 198);
+            this.lblPodCate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPodCate.Name = "lblPodCate";
-            this.lblPodCate.Size = new System.Drawing.Size(49, 13);
+            this.lblPodCate.Size = new System.Drawing.Size(72, 20);
             this.lblPodCate.TabIndex = 2;
             this.lblPodCate.Text = "Kategori:";
             // 
             // lblPodUpdate
             // 
             this.lblPodUpdate.AutoSize = true;
-            this.lblPodUpdate.Location = new System.Drawing.Point(14, 180);
+            this.lblPodUpdate.Location = new System.Drawing.Point(21, 277);
+            this.lblPodUpdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPodUpdate.Name = "lblPodUpdate";
-            this.lblPodUpdate.Size = new System.Drawing.Size(109, 13);
+            this.lblPodUpdate.Size = new System.Drawing.Size(162, 20);
             this.lblPodUpdate.TabIndex = 3;
             this.lblPodUpdate.Text = "Uppdateringsintervall:";
             // 
             // cbBoxPodUpdate
             // 
             this.cbBoxPodUpdate.FormattingEnabled = true;
-            this.cbBoxPodUpdate.Location = new System.Drawing.Point(129, 177);
+            this.cbBoxPodUpdate.Location = new System.Drawing.Point(194, 272);
+            this.cbBoxPodUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbBoxPodUpdate.Name = "cbBoxPodUpdate";
-            this.cbBoxPodUpdate.Size = new System.Drawing.Size(121, 21);
+            this.cbBoxPodUpdate.Size = new System.Drawing.Size(180, 28);
             this.cbBoxPodUpdate.TabIndex = 4;
             // 
             // cbBoxPodCate
             // 
             this.cbBoxPodCate.FormattingEnabled = true;
-            this.cbBoxPodCate.Location = new System.Drawing.Point(129, 126);
+            this.cbBoxPodCate.Location = new System.Drawing.Point(194, 194);
+            this.cbBoxPodCate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbBoxPodCate.Name = "cbBoxPodCate";
-            this.cbBoxPodCate.Size = new System.Drawing.Size(121, 21);
+            this.cbBoxPodCate.Size = new System.Drawing.Size(180, 28);
             this.cbBoxPodCate.TabIndex = 5;
             // 
             // btnPren
             // 
-            this.btnPren.Location = new System.Drawing.Point(322, 126);
+            this.btnPren.Location = new System.Drawing.Point(483, 194);
+            this.btnPren.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPren.Name = "btnPren";
-            this.btnPren.Size = new System.Drawing.Size(75, 23);
+            this.btnPren.Size = new System.Drawing.Size(112, 35);
             this.btnPren.TabIndex = 6;
             this.btnPren.Text = "Prenumerera";
             this.btnPren.UseVisualStyleBackColor = true;
@@ -101,25 +108,28 @@
             // 
             // txtBoxURL
             // 
-            this.txtBoxURL.Location = new System.Drawing.Point(129, 30);
+            this.txtBoxURL.Location = new System.Drawing.Point(194, 46);
+            this.txtBoxURL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxURL.Name = "txtBoxURL";
-            this.txtBoxURL.Size = new System.Drawing.Size(293, 20);
+            this.txtBoxURL.Size = new System.Drawing.Size(438, 26);
             this.txtBoxURL.TabIndex = 7;
+            this.txtBoxURL.TextChanged += new System.EventHandler(this.txtBoxURL_TextChanged);
             // 
             // lblURL
             // 
             this.lblURL.AutoSize = true;
-            this.lblURL.Location = new System.Drawing.Point(91, 33);
+            this.lblURL.Location = new System.Drawing.Point(136, 51);
+            this.lblURL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblURL.Name = "lblURL";
-            this.lblURL.Size = new System.Drawing.Size(32, 13);
+            this.lblURL.Size = new System.Drawing.Size(46, 20);
             this.lblURL.TabIndex = 8;
             this.lblURL.Text = "URL:";
             // 
             // Presentation2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 232);
+            this.ClientSize = new System.Drawing.Size(720, 357);
             this.Controls.Add(this.lblURL);
             this.Controls.Add(this.txtBoxURL);
             this.Controls.Add(this.btnPren);
@@ -129,6 +139,7 @@
             this.Controls.Add(this.lblPodCate);
             this.Controls.Add(this.lblPodName);
             this.Controls.Add(this.txtBoxPodName);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Presentation2";
             this.Text = "Presentation2";
             this.Load += new System.EventHandler(this.Presentation2_Load);

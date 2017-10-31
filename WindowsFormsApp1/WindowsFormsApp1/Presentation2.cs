@@ -50,6 +50,11 @@ namespace WindowsFormsApp1
             this.Close();
 
         }
+
+        private void txtBoxURL_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
