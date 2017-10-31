@@ -16,10 +16,9 @@ namespace WindowsFormsApp1
     {
         RSSReader RSSReader = new RSSReader();
 
-        public Inställningar(List<Podcast> PodList)
+        public Inställningar()
         {
             InitializeComponent();
-            this.PodList = PodList;
         }
 
         private void btnPren_Click(object sender, EventArgs e)
@@ -29,8 +28,6 @@ namespace WindowsFormsApp1
         }
 
         List<Category> Cate2 = new List<Category>();
-
-        public List<Podcast> PodList { get; }
 
         public void Presentation_Load(object sender, EventArgs e)
 
@@ -146,6 +143,10 @@ namespace WindowsFormsApp1
 
         private void lstBoxEpisode_DoubleClick(object sender, EventArgs e)
         {
+
+            var chosenEpisode = lstBoxEpisode.SelectedItem as Episode;
+            lblShowMore.Text = chosenEpisode.description;
+
             Episode episodeLink = lstBoxEpisode.SelectedItem as Episode;
             var valdLink = episodeLink.link;
             Episode titel = lstBoxEpisode.SelectedItem as Episode;
@@ -172,7 +173,7 @@ namespace WindowsFormsApp1
 
         private void btnSettings_click(object sender, EventArgs e)
         {
-            Presentation3 presentation3 = new Presentation3(Cate2, PodList);
+            Presentation3 presentation3 = new Presentation3(Cate2, Podcast.PodList);
             presentation3.Show();
 
             presentation3.FormClosed += Presentation3_FormClosed;
@@ -183,11 +184,6 @@ namespace WindowsFormsApp1
             lstBoxCategories.DataSource = null;
             lstBoxCategories.DataSource = Cate2;
             lstBoxCategories.DisplayMember = "CateName";
-        }
-
-        private void lstBoxEpisode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

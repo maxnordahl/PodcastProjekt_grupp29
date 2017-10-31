@@ -28,6 +28,7 @@ namespace WindowsFormsApp1
             cmBoxCateName.DataSource = Cate2;
             cmBoxCateName.DisplayMember = "CateName";
 
+            cmBoxPods.DataSource = null;
             cmBoxPods.DataSource = PodList;
             cmBoxPods.DisplayMember = "Titel";
         }

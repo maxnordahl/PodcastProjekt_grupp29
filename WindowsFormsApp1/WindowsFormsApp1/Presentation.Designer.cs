@@ -39,6 +39,7 @@
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.btnSettings = new System.Windows.Forms.Button();
             this.lblDownload = new System.Windows.Forms.Label();
+            this.lblShowMore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,11 +75,10 @@
             // lstBoxEpisode
             // 
             this.lstBoxEpisode.FormattingEnabled = true;
-            this.lstBoxEpisode.Location = new System.Drawing.Point(612, 163);
+            this.lstBoxEpisode.Location = new System.Drawing.Point(615, 164);
             this.lstBoxEpisode.Name = "lstBoxEpisode";
             this.lstBoxEpisode.Size = new System.Drawing.Size(274, 251);
             this.lstBoxEpisode.TabIndex = 5;
-            this.lstBoxEpisode.SelectedIndexChanged += new System.EventHandler(this.lstBoxEpisode_SelectedIndexChanged);
             this.lstBoxEpisode.DoubleClick += new System.EventHandler(this.lstBoxEpisode_DoubleClick);
             // 
             // lblCategories
@@ -139,11 +139,20 @@
             this.lblDownload.Size = new System.Drawing.Size(0, 13);
             this.lblDownload.TabIndex = 11;
             // 
+            // lblShowMore
+            // 
+            this.lblShowMore.AutoSize = true;
+            this.lblShowMore.Location = new System.Drawing.Point(216, 464);
+            this.lblShowMore.Name = "lblShowMore";
+            this.lblShowMore.Size = new System.Drawing.Size(0, 13);
+            this.lblShowMore.TabIndex = 12;
+            // 
             // Inställningar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.Controls.Add(this.lblShowMore);
             this.Controls.Add(this.lblDownload);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.axWindowsMediaPlayer1);
@@ -176,6 +185,8 @@
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Label lblDownload;
+        private System.Windows.Forms.ListBox lstBoxShowMore;
+        private System.Windows.Forms.Label lblShowMore;
     }
 }
 
