@@ -45,7 +45,7 @@
             // btnPren
             // 
             this.btnPren.Location = new System.Drawing.Point(177, 41);
-            this.btnPren.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPren.Margin = new System.Windows.Forms.Padding(2);
             this.btnPren.Name = "btnPren";
             this.btnPren.Size = new System.Drawing.Size(107, 40);
             this.btnPren.TabIndex = 0;
@@ -121,7 +121,7 @@
             // btnSettings
             // 
             this.btnSettings.Location = new System.Drawing.Point(366, 41);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(2);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(107, 40);
             this.btnSettings.TabIndex = 10;
@@ -134,14 +134,14 @@
             this.lblDownload.AutoSize = true;
             this.lblDownload.Location = new System.Drawing.Point(924, 656);
             this.lblDownload.Name = "lblDownload";
-            this.lblDownload.Size = new System.Drawing.Size(0, 20);
+            this.lblDownload.Size = new System.Drawing.Size(0, 13);
             this.lblDownload.TabIndex = 11;
             // 
-            // Inställningar
+            // Presentation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1808, 883);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.lblDownload);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.axWindowsMediaPlayer1);
@@ -152,7 +152,7 @@
             this.Controls.Add(this.lstBoxPodcast);
             this.Controls.Add(this.lstBoxCategories);
             this.Controls.Add(this.btnPren);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Inställningar";
             this.Text = "btnSettings";
             this.Load += new System.EventHandler(this.Presentation_Load);

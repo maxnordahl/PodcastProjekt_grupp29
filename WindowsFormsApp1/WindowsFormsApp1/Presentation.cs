@@ -16,9 +16,10 @@ namespace WindowsFormsApp1
     {
         RSSReader RSSReader = new RSSReader();
 
-        public Inställningar()
+        public Inställningar(List<Podcast> MyProperty)
         {
             InitializeComponent();
+            this.MyProperty = MyProperty;
         }
 
         private void btnPren_Click(object sender, EventArgs e)
@@ -27,24 +28,22 @@ namespace WindowsFormsApp1
             presentation2.Show();
         }
 
-        List<Category> Cate2 = new List<Category>(); 
-        private void Presentation_Load(object sender, EventArgs e)
+        List<Category> Cate2 = new List<Category>();
+
+        public List<Podcast> MyProperty { get; }
+
+        public void Presentation_Load(object sender, EventArgs e)
 
         {
-            {
+            
                 lstBoxCategories.DataSource = Cate2;
                 lstBoxCategories.DisplayMember = "CateName";
 
-            }
+            
 
         }
 
-        public void txtBoxURL_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstBoxCategories_Click_1(object sender, EventArgs e)
+        public void lstBoxCategories_Click_1(object sender, EventArgs e)
         {
 
             if (lstBoxCategories.SelectedItem != null)
@@ -104,7 +103,7 @@ namespace WindowsFormsApp1
 
         private void btnSettings_click(object sender, EventArgs e)
         {
-            Presentation3 presentation3 = new Presentation3(Cate2);
+            Presentation3 presentation3 = new Presentation3(Cate2, MyProperty);
             presentation3.Show();
         }
     }
