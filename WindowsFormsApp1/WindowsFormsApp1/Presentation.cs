@@ -85,12 +85,12 @@ namespace WindowsFormsApp1
             string fileLocation = Environment.CurrentDirectory + namn + ".mp3";
             using (var client = new WebClient())
             {
-                lblDownload.Text = "Filen laddas ner...";
+                //lblDownload.Text = "Filen laddas ner...";
                 client.DownloadFile(valdLink, fileLocation);
                 MessageBox.Show("Filen har nu laddats ner");
             }
 
-            lblDownload.Text = "";  
+           // lblDownload.Text = "";  
         }
 
 
