@@ -38,9 +38,7 @@
             this.lblEpisode = new System.Windows.Forms.Label();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.btnSettings = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.axWindowsMediaPlayer2 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.lblDownload = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer2)).BeginInit();
             this.SuspendLayout();
@@ -132,25 +130,13 @@
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_click);
             // 
-            // label1
+            // lblDownload
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(616, 426);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(160, 456);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "label2";
+            this.lblDownload.AutoSize = true;
+            this.lblDownload.Location = new System.Drawing.Point(924, 656);
+            this.lblDownload.Name = "lblDownload";
+            this.lblDownload.Size = new System.Drawing.Size(0, 20);
+            this.lblDownload.TabIndex = 11;
             // 
             // axWindowsMediaPlayer2
             // 
@@ -166,10 +152,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 476);
-            this.Controls.Add(this.axWindowsMediaPlayer2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1808, 883);
+            this.Controls.Add(this.lblDownload);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.lblEpisode);
@@ -201,9 +185,7 @@
         private System.Windows.Forms.Label lblEpisode;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.Button btnSettings;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer2;
+        private System.Windows.Forms.Label lblDownload;
     }
 }
 
