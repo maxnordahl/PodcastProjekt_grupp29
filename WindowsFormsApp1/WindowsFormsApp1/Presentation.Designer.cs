@@ -40,7 +40,6 @@
             this.btnSettings = new System.Windows.Forms.Button();
             this.lblDownload = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPren
@@ -138,16 +137,6 @@
             this.lblDownload.Size = new System.Drawing.Size(0, 20);
             this.lblDownload.TabIndex = 11;
             // 
-            // axWindowsMediaPlayer2
-            // 
-            this.axWindowsMediaPlayer2.Enabled = true;
-            this.axWindowsMediaPlayer2.Location = new System.Drawing.Point(547, 41);
-            this.axWindowsMediaPlayer2.Name = "axWindowsMediaPlayer2";
-            this.axWindowsMediaPlayer2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer2.OcxState")));
-            this.axWindowsMediaPlayer2.Size = new System.Drawing.Size(317, 62);
-            this.axWindowsMediaPlayer2.TabIndex = 13;
-            this.axWindowsMediaPlayer2.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
-            // 
             // Inställningar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,7 +157,6 @@
             this.Text = "btnSettings";
             this.Load += new System.EventHandler(this.Presentation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -16,7 +16,7 @@ namespace Logic
     {
         public string CateName { get; set; }
 
-        public Category()
+        public Category(string CateName)
         {
             this.CateName = CateName;
         }
@@ -26,18 +26,13 @@ namespace Logic
             return CateName;
         }
 
-        List<Category> Cates { get; set; } = new List<Category>();
+        //List<Category> Cates { get; set; } = new List<Category>();
 
-        public List<Category> CateLista()
-        {
-            Cates.Add(new Category() { CateName="Favoriter"});
-            Cates.Add(new Category() { CateName = "Hälsa" });
-            return Cates;
-        }
-
-        //public void RemoveCateFromList(string catename, ComboBox cmbBox)
+        //public List<Category> CateLista()
         //{
-
+        //    Cates.Add(new Category() { CateName="Favoriter"});
+        //    Cates.Add(new Category() { CateName = "Hälsa" });
+        //    return Cates;
         //}
     }
 }
