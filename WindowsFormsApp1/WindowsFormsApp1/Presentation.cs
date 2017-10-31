@@ -100,6 +100,7 @@ namespace WindowsFormsApp1
             var namn = titel.titel;
             string fileLocation = Environment.CurrentDirectory + namn + ".mp3";
             axWindowsMediaPlayer1.URL = fileLocation;
+            var tja = "";
         }
 
         private void btnSettings_click(object sender, EventArgs e)
