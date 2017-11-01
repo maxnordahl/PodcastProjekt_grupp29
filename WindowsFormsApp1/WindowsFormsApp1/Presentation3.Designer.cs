@@ -43,25 +43,23 @@
             this.lblNewCateName = new System.Windows.Forms.Label();
             this.btnNewCate = new System.Windows.Forms.Button();
             this.txtBoxNewCateName2 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnRemovePod = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCate
             // 
             this.lblCate.AutoSize = true;
-            this.lblCate.Location = new System.Drawing.Point(87, 67);
-            this.lblCate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCate.Location = new System.Drawing.Point(130, 103);
             this.lblCate.Name = "lblCate";
-            this.lblCate.Size = new System.Drawing.Size(49, 13);
+            this.lblCate.Size = new System.Drawing.Size(72, 20);
             this.lblCate.TabIndex = 0;
             this.lblCate.Text = "Kategori:";
             // 
             // btnRemoveCate
             // 
-            this.btnRemoveCate.Location = new System.Drawing.Point(40, 110);
-            this.btnRemoveCate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemoveCate.Location = new System.Drawing.Point(60, 169);
             this.btnRemoveCate.Name = "btnRemoveCate";
-            this.btnRemoveCate.Size = new System.Drawing.Size(50, 21);
+            this.btnRemoveCate.Size = new System.Drawing.Size(75, 32);
             this.btnRemoveCate.TabIndex = 2;
             this.btnRemoveCate.Text = "Ta bort";
             this.btnRemoveCate.UseVisualStyleBackColor = true;
@@ -69,20 +67,18 @@
             // 
             // btnChangeCateName
             // 
-            this.btnChangeCateName.Location = new System.Drawing.Point(101, 110);
-            this.btnChangeCateName.Margin = new System.Windows.Forms.Padding(2);
+            this.btnChangeCateName.Location = new System.Drawing.Point(152, 169);
             this.btnChangeCateName.Name = "btnChangeCateName";
-            this.btnChangeCateName.Size = new System.Drawing.Size(86, 21);
+            this.btnChangeCateName.Size = new System.Drawing.Size(129, 32);
             this.btnChangeCateName.TabIndex = 3;
             this.btnChangeCateName.Text = "Ändra namn";
             this.btnChangeCateName.UseVisualStyleBackColor = true;
             // 
             // txtBoxNewName
             // 
-            this.txtBoxNewName.Location = new System.Drawing.Point(71, 148);
-            this.txtBoxNewName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBoxNewName.Location = new System.Drawing.Point(106, 228);
             this.txtBoxNewName.Name = "txtBoxNewName";
-            this.txtBoxNewName.Size = new System.Drawing.Size(82, 20);
+            this.txtBoxNewName.Size = new System.Drawing.Size(121, 26);
             this.txtBoxNewName.TabIndex = 4;
             // 
             // lblCategory
@@ -97,19 +93,17 @@
             // cmBoxCateName
             // 
             this.cmBoxCateName.FormattingEnabled = true;
-            this.cmBoxCateName.Location = new System.Drawing.Point(71, 82);
-            this.cmBoxCateName.Margin = new System.Windows.Forms.Padding(2);
+            this.cmBoxCateName.Location = new System.Drawing.Point(106, 126);
             this.cmBoxCateName.Name = "cmBoxCateName";
-            this.cmBoxCateName.Size = new System.Drawing.Size(82, 21);
+            this.cmBoxCateName.Size = new System.Drawing.Size(121, 28);
             this.cmBoxCateName.TabIndex = 5;
             // 
             // lblNewName
             // 
             this.lblNewName.AutoSize = true;
-            this.lblNewName.Location = new System.Drawing.Point(87, 133);
-            this.lblNewName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNewName.Location = new System.Drawing.Point(130, 205);
             this.lblNewName.Name = "lblNewName";
-            this.lblNewName.Size = new System.Drawing.Size(58, 13);
+            this.lblNewName.Size = new System.Drawing.Size(85, 20);
             this.lblNewName.TabIndex = 6;
             this.lblNewName.Text = "Nytt namn:";
             // 
@@ -117,7 +111,7 @@
             // 
             this.txtBoxNewCateName.Location = new System.Drawing.Point(107, 257);
             this.txtBoxNewCateName.Name = "txtBoxNewCateName";
-            this.txtBoxNewCateName.Size = new System.Drawing.Size(121, 20);
+            this.txtBoxNewCateName.Size = new System.Drawing.Size(121, 26);
             this.txtBoxNewCateName.TabIndex = 4;
             // 
             // btnRemove
@@ -141,37 +135,36 @@
             // lblPod
             // 
             this.lblPod.AutoSize = true;
-            this.lblPod.Location = new System.Drawing.Point(327, 67);
-            this.lblPod.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPod.Location = new System.Drawing.Point(490, 103);
             this.lblPod.Name = "lblPod";
-            this.lblPod.Size = new System.Drawing.Size(49, 13);
+            this.lblPod.Size = new System.Drawing.Size(71, 20);
             this.lblPod.TabIndex = 7;
             this.lblPod.Text = "Podcast:";
             // 
             // cmBoxPods
             // 
             this.cmBoxPods.FormattingEnabled = true;
-            this.cmBoxPods.Location = new System.Drawing.Point(310, 82);
-            this.cmBoxPods.Margin = new System.Windows.Forms.Padding(2);
+            this.cmBoxPods.Location = new System.Drawing.Point(465, 126);
             this.cmBoxPods.Name = "cmBoxPods";
-            this.cmBoxPods.Size = new System.Drawing.Size(82, 21);
+            this.cmBoxPods.Size = new System.Drawing.Size(121, 28);
             this.cmBoxPods.TabIndex = 8;
-            this.cmBoxPods.SelectedIndexChanged += new System.EventHandler(this.cmBoxPods_SelectedIndexChanged);
             // 
             // lblNewCateName
             // 
             this.lblNewCateName.AutoSize = true;
-            this.lblNewCateName.Location = new System.Drawing.Point(70, 230);
+            this.lblNewCateName.Location = new System.Drawing.Point(105, 354);
+            this.lblNewCateName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNewCateName.Name = "lblNewCateName";
-            this.lblNewCateName.Size = new System.Drawing.Size(75, 13);
+            this.lblNewCateName.Size = new System.Drawing.Size(112, 20);
             this.lblNewCateName.TabIndex = 9;
             this.lblNewCateName.Text = "Kategorinamn:";
             // 
             // btnNewCate
             // 
-            this.btnNewCate.Location = new System.Drawing.Point(40, 272);
+            this.btnNewCate.Location = new System.Drawing.Point(60, 418);
+            this.btnNewCate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNewCate.Name = "btnNewCate";
-            this.btnNewCate.Size = new System.Drawing.Size(125, 23);
+            this.btnNewCate.Size = new System.Drawing.Size(188, 35);
             this.btnNewCate.TabIndex = 10;
             this.btnNewCate.Text = "Lägg till ny kategori";
             this.btnNewCate.UseVisualStyleBackColor = true;
@@ -179,27 +172,29 @@
             // 
             // txtBoxNewCateName2
             // 
-            this.txtBoxNewCateName2.Location = new System.Drawing.Point(40, 246);
+            this.txtBoxNewCateName2.Location = new System.Drawing.Point(60, 378);
+            this.txtBoxNewCateName2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxNewCateName2.Name = "txtBoxNewCateName2";
-            this.txtBoxNewCateName2.Size = new System.Drawing.Size(125, 20);
+            this.txtBoxNewCateName2.Size = new System.Drawing.Size(186, 26);
             this.txtBoxNewCateName2.TabIndex = 11;
             // 
-            // button3
+            // btnRemovePod
             // 
-            this.button3.Location = new System.Drawing.Point(276, 108);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(141, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Ta bort prenumeration";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnRemovePod.Location = new System.Drawing.Point(414, 166);
+            this.btnRemovePod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRemovePod.Name = "btnRemovePod";
+            this.btnRemovePod.Size = new System.Drawing.Size(212, 35);
+            this.btnRemovePod.TabIndex = 12;
+            this.btnRemovePod.Text = "Ta bort prenumeration";
+            this.btnRemovePod.UseVisualStyleBackColor = true;
+            this.btnRemovePod.Click += new System.EventHandler(this.btnRemovePod_Click);
             // 
             // Presentation3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 356);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(752, 548);
+            this.Controls.Add(this.btnRemovePod);
             this.Controls.Add(this.txtBoxNewCateName2);
             this.Controls.Add(this.btnNewCate);
             this.Controls.Add(this.lblNewCateName);
@@ -211,7 +206,6 @@
             this.Controls.Add(this.btnChangeCateName);
             this.Controls.Add(this.btnRemoveCate);
             this.Controls.Add(this.lblCate);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Presentation3";
             this.Text = "Presentation3";
             this.Load += new System.EventHandler(this.Presentation3_Load);
@@ -236,6 +230,6 @@
         private System.Windows.Forms.Label lblNewCateName;
         private System.Windows.Forms.Button btnNewCate;
         private System.Windows.Forms.TextBox txtBoxNewCateName2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnRemovePod;
     }
 }

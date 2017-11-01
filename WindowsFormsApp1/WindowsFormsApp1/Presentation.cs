@@ -9,11 +9,14 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace WindowsFormsApp1
 {
     public partial class Inställningar : Form
     {
+        
         RSSReader RSSReader = new RSSReader();
 
         public Inställningar()
@@ -31,19 +34,40 @@ namespace WindowsFormsApp1
 
         public void Presentation_Load(object sender, EventArgs e)
 
-        { 
+        {
+            PodcastSerializer deserializer = new PodcastSerializer();
+            var podcast = deserializer.Deserialize(Environment.CurrentDirectory + "podcast.xml");
+            if (File.Exists(Environment.CurrentDirectory + "podcast.xml"))
+            {
+                foreach (var item in podcast)
+                {
+                    var title = item.Titel;
+                    var category = item.Category;
+                    var url = item.URL;
+                    var episode = item.Episodes;
+                    var interval = item.UpdateInterval;
+                    Podcast podcasts = new Podcast() { Titel = title, Category = category, Episodes = episode, URL = url, UpdateInterval = interval };
+                    Podcast.PodList.Add(podcasts);
+
+                    Category newCategory = new Category(category);
+                    Cate2.Add(newCategory);
+                }
+            }
+
+            
+
             lstBoxCategories.DataSource = Cate2;
             lstBoxCategories.DisplayMember = "CateName";
 
-            System.Windows.Forms.Timer timerMin = new System.Windows.Forms.Timer();
+            Timer timerMin = new Timer();
             timerMin.Tick += timerMinAsync;
             timerMin.Interval = 60000;
             timerMin.Start();
-            System.Windows.Forms.Timer timerHour = new System.Windows.Forms.Timer();
+            Timer timerHour = new Timer();
             timerHour.Tick += timerHourAsync;
             timerHour.Interval = 3600000;
             timerHour.Start();
-            System.Windows.Forms.Timer timerDay = new System.Windows.Forms.Timer();
+            Timer timerDay = new Timer();
             timerDay.Tick += timerDayAsync;
             timerDay.Interval = 216000000;
             timerDay.Start();
@@ -184,6 +208,14 @@ namespace WindowsFormsApp1
             lstBoxCategories.DataSource = null;
             lstBoxCategories.DataSource = Cate2;
             lstBoxCategories.DisplayMember = "CateName";
+        }
+
+        
+
+        private void Inställningar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            PodcastSerializer serializer = new PodcastSerializer();
+            serializer.Serialize(Podcast.PodList);
         }
     }
 }

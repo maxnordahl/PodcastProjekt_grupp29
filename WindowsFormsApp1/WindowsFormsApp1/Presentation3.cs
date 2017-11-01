@@ -53,14 +53,13 @@ namespace WindowsFormsApp1
             cmBoxCateName.DisplayMember = "CateName";
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnRemovePod_Click(object sender, EventArgs e)
         {
-            //Podcast removePod = 
+            string PodName = cmBoxPods.Text;
+            PodList.Remove(cmBoxPods.SelectedItem as Logic.Podcast);
+            MessageBox.Show("Podcast" + PodList + "har tagits bort.");
+           //Podcast removePod = 
             //Logic.Podcast.PodList.Remove(removePod);
-        }
-
-        private void cmBoxPods_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
     }
 }

@@ -9,11 +9,14 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Logic
 {
+    [Serializable]
     public class Category
     {
+        [XmlElement("Genre")]
         public string CateName { get; set; }
 
         public Category(string CateName)
