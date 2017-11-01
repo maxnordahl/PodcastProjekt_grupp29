@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +32,8 @@ namespace WindowsFormsApp1
             cmBoxPods.DataSource = null;
             cmBoxPods.DataSource = PodList;
             cmBoxPods.DisplayMember = "Titel";
+
+
         }
 
         private void btnRemoveCate_Click(object sender, EventArgs e)
