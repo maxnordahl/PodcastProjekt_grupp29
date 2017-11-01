@@ -40,12 +40,13 @@
             this.btnSettings = new System.Windows.Forms.Button();
             this.lblDownload = new System.Windows.Forms.Label();
             this.lblShowMore = new System.Windows.Forms.Label();
+            this.lblListned = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPren
             // 
-            this.btnPren.Location = new System.Drawing.Point(266, 63);
+            this.btnPren.Location = new System.Drawing.Point(68, 62);
             this.btnPren.Name = "btnPren";
             this.btnPren.Size = new System.Drawing.Size(160, 62);
             this.btnPren.TabIndex = 0;
@@ -79,7 +80,7 @@
             // 
             this.lstBoxEpisode.FormattingEnabled = true;
             this.lstBoxEpisode.ItemHeight = 20;
-            this.lstBoxEpisode.Location = new System.Drawing.Point(922, 252);
+            this.lstBoxEpisode.Location = new System.Drawing.Point(922, 251);
             this.lstBoxEpisode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstBoxEpisode.Name = "lstBoxEpisode";
             this.lstBoxEpisode.Size = new System.Drawing.Size(409, 384);
@@ -119,7 +120,7 @@
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(808, 14);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(599, 17);
             this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
@@ -129,7 +130,7 @@
             // 
             // btnSettings
             // 
-            this.btnSettings.Location = new System.Drawing.Point(549, 63);
+            this.btnSettings.Location = new System.Drawing.Point(332, 62);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(160, 62);
             this.btnSettings.TabIndex = 10;
@@ -140,7 +141,7 @@
             // lblDownload
             // 
             this.lblDownload.AutoSize = true;
-            this.lblDownload.Location = new System.Drawing.Point(1355, 263);
+            this.lblDownload.Location = new System.Drawing.Point(918, 680);
             this.lblDownload.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDownload.Name = "lblDownload";
             this.lblDownload.Size = new System.Drawing.Size(0, 20);
@@ -149,17 +150,26 @@
             // lblShowMore
             // 
             this.lblShowMore.AutoSize = true;
-            this.lblShowMore.Location = new System.Drawing.Point(573, 741);
+            this.lblShowMore.Location = new System.Drawing.Point(600, 167);
             this.lblShowMore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblShowMore.Name = "lblShowMore";
             this.lblShowMore.Size = new System.Drawing.Size(0, 20);
             this.lblShowMore.TabIndex = 12;
+            // 
+            // lblListned
+            // 
+            this.lblListned.AutoSize = true;
+            this.lblListned.Location = new System.Drawing.Point(1139, 680);
+            this.lblListned.Name = "lblListned";
+            this.lblListned.Size = new System.Drawing.Size(0, 20);
+            this.lblListned.TabIndex = 13;
             // 
             // Inställningar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1912, 1038);
+            this.Controls.Add(this.lblListned);
             this.Controls.Add(this.lblShowMore);
             this.Controls.Add(this.lblDownload);
             this.Controls.Add(this.btnSettings);
@@ -195,6 +205,7 @@
         private System.Windows.Forms.Label lblDownload;
         private System.Windows.Forms.ListBox lstBoxShowMore;
         private System.Windows.Forms.Label lblShowMore;
+        private System.Windows.Forms.Label lblListned;
     }
 }
 

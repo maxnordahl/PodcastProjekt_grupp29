@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
     public partial class Presentation3 : Form
     {
         private readonly List<Logic.Category> Cate2;
+        private Logic.Validator Validator = new Logic.Validator();
 
         public Presentation3(List<Logic.Category> Cate2, List<Logic.Podcast> PodList)
         {
@@ -29,8 +30,7 @@ namespace WindowsFormsApp1
             cmBoxCateName.DataSource = Cate2;
             cmBoxCateName.DisplayMember = "CateName";
 
-            cmBoxCateName2.DataSource = Cate2;
-            cmBoxCateName2.DisplayMember = "CateName";
+            
 
             cmBoxPods.DataSource = null;
             cmBoxPods.DataSource = PodList;
@@ -49,14 +49,27 @@ namespace WindowsFormsApp1
 
         private void btnNewCate_Click(object sender, EventArgs e)
         {
-            var newCate = new Logic.Category(txtBoxNewCateName2.Text);
+            string vCateName = txtBoxNewCateName2.Text;
 
-            Cate2.Add(newCate as Logic.Category);
-            MessageBox.Show("Kategorin " + newCate.CateName + " har lagts till.");
+            try
+            {
 
-            cmBoxCateName.DataSource = null;
-            cmBoxCateName.DataSource = Cate2;
-            cmBoxCateName.DisplayMember = "CateName";
+                if (Validator.ValidateIfStringNotNull(vCateName))
+                {
+                    var newCate = new Logic.Category(txtBoxNewCateName2.Text);
+
+                    Cate2.Add(newCate as Logic.Category);
+                    MessageBox.Show("Kategorin " + newCate.CateName + " har lagts till.");
+
+                    cmBoxCateName.DataSource = null;
+                    cmBoxCateName.DataSource = Cate2;
+                    cmBoxCateName.DisplayMember = "CateName";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnRemovePod_Click(object sender, EventArgs e)
@@ -72,38 +85,61 @@ namespace WindowsFormsApp1
 
         private void btnChangeCateName_Click(object sender, EventArgs e)
         {
+            string VCateName = txtBoxNewName.Text;
+            try
+            {
 
-            var cateObject = cmBoxCateName.SelectedItem as Logic.Category;
-            var oldCateName = cateObject.CateName;
+                if (Validator.ValidateIfStringNotNull(VCateName))
+                {
+                    var cateObject = cmBoxCateName.SelectedItem as Logic.Category;
+                    var oldCateName = cateObject.CateName;
 
-            string newCateName = txtBoxNewName.Text;
+                    string newCateName = txtBoxNewName.Text;
 
-            cateObject.CateName = newCateName;
+                    cateObject.CateName = newCateName;
 
-            MessageBox.Show("Kategorinamnet " + oldCateName + " har ändrats till " + newCateName);
+                    MessageBox.Show("Kategorinamnet " + oldCateName + " har ändrats till " + newCateName);
 
-            cmBoxCateName.DataSource = null;
-            cmBoxCateName.DataSource = Cate2;
-            cmBoxCateName.DisplayMember = "CateName";
+                    cmBoxCateName.DataSource = null;
+                    cmBoxCateName.DataSource = Cate2;
+                    cmBoxCateName.DisplayMember = "CateName";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        private async void btnChangeURL_Click(object sender, EventArgs e)
+            private async void btnChangeURL_Click(object sender, EventArgs e)
         {
-            var oldPod = cmBoxPods.SelectedItem as Logic.Podcast;
-            string newURL = txtBoxNewURL.Text;
+            string VURL = txtBoxNewURL.Text;
+            try
+            {
 
-            oldPod.URL = newURL;
+                if (Validator.ValidateUrl(VURL))
+                {
+                    var oldPod = cmBoxPods.SelectedItem as Logic.Podcast;
+                    string newURL = txtBoxNewURL.Text;
 
-            MessageBox.Show("URL för Podcast " + oldPod.Titel + " har ändrats");
+                    oldPod.URL = newURL;
 
-            Logic.RSSReader reader = new Logic.RSSReader();
-            var newEpisodeList = await reader.getFeed(newURL);
+                    MessageBox.Show("URL för Podcast " + oldPod.Titel + " har ändrats");
 
-            oldPod.Episodes = newEpisodeList;
+                    Logic.RSSReader reader = new Logic.RSSReader();
+                    var newEpisodeList = await reader.getFeed(newURL);
 
-            cmBoxPods.DataSource = null;
-            cmBoxPods.DataSource = PodList;
-            cmBoxPods.DisplayMember = "Titel";
+                    oldPod.Episodes = newEpisodeList;
+
+                    cmBoxPods.DataSource = null;
+                    cmBoxPods.DataSource = PodList;
+                    cmBoxPods.DisplayMember = "Titel";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnChangeIntervalPod_Click(object sender, EventArgs e)
@@ -122,18 +158,31 @@ namespace WindowsFormsApp1
 
         private void btnChangePodName_Click(object sender, EventArgs e)
         {
-            var newName = txtBoxNewPodName.Text;
+            string podName = txtBoxNewPodName.Text;
+            try
+            {
 
-            var podObject = cmBoxPods.SelectedItem as Logic.Podcast;
-            var oldName = podObject.Titel;
+                if (Validator.ValidateIfStringNotNull(podName))
+                {
+                    var newName = txtBoxNewPodName.Text;
 
-            podObject.Titel = newName;
+                    var podObject = cmBoxPods.SelectedItem as Logic.Podcast;
+                    var oldName = podObject.Titel;
 
-            MessageBox.Show("Podcastnamnet " + oldName + " har ändrats till " + newName);
+                    podObject.Titel = newName;
 
-            cmBoxPods.DataSource = null;
-            cmBoxPods.DataSource = PodList;
-            cmBoxPods.DisplayMember = "Titel";
+                    MessageBox.Show("Podcastnamnet " + oldName + " har ändrats till " + newName);
+
+                    cmBoxPods.DataSource = null;
+                    cmBoxPods.DataSource = PodList;
+                    cmBoxPods.DisplayMember = "Titel";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

@@ -16,6 +16,8 @@ namespace WindowsFormsApp1
     {
         public List<Logic.Category> Cate2 { get; }
         public Logic.RSSReader RSSReader = new Logic.RSSReader();
+        private Logic.Validator Validator = new Logic.Validator();
+
 
         public Presentation2(List<Logic.Category> Cate2)
         {
@@ -34,24 +36,40 @@ namespace WindowsFormsApp1
 
         private async void btnPren_Click(object sender, EventArgs e)
         {
-            string url = txtBoxURL.Text;
-            string name = txtBoxPodName.Text;
-            string category = cbBoxPodCate.Text;
+            string podName = txtBoxPodName.Text;
+            string podURL = txtBoxURL.Text;
 
-            var chosenUpdate = cbBoxPodUpdate.SelectedItem;
-            string chosenUpdateString = chosenUpdate.ToString().Replace("Varje minut", "60000").Replace("Varje timme", "3600000").Replace("Varje dag", "216000000");
-            int updateInterval = int.Parse(chosenUpdateString);
+            try
+            {
 
-            var episodeList = await RSSReader.getFeed(url);
+                if (Validator.ValidateIfStringNotNull(podName) && Validator.ValidateUrl(podURL))
+                {
+
+                   
+                    string url = txtBoxURL.Text;
+                    string name = txtBoxPodName.Text;
+                    string category = cbBoxPodCate.Text;
+
+                    var chosenUpdate = cbBoxPodUpdate.SelectedItem;
+                    string chosenUpdateString = chosenUpdate.ToString().Replace("Varje minut", "60000").Replace("Varje timme", "3600000").Replace("Varje dag", "216000000");
+                    int updateInterval = int.Parse(chosenUpdateString);
+
+                    var episodeList = await RSSReader.getFeed(url);
 
 
-            var newPod = new Logic.Podcast() {URL= url, Titel = name, Category = category, UpdateInterval = updateInterval, Episodes = episodeList};
-            //newPod.URLtoRSSReader();
+                    var newPod = new Logic.Podcast() { URL = url, Titel = name, Category = category, UpdateInterval = updateInterval, Episodes = episodeList };
+                    //newPod.URLtoRSSReader();
 
-            Logic.Podcast.PodList.Add(newPod);
+                    Logic.Podcast.PodList.Add(newPod);
 
-            MessageBox.Show("Prenumerationen är skapad");
-            this.Close();
+                    MessageBox.Show("Prenumerationen är skapad");
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }

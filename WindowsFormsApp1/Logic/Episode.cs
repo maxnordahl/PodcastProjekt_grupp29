@@ -17,7 +17,8 @@ namespace Logic
         public string link { get; set; }
         [XmlElement("Description")]
         public string description { get; set; }
-
+        [XmlElement("ListenedTo")]
+        public bool ListenedTo { get; set; } = false;
 
     }
 

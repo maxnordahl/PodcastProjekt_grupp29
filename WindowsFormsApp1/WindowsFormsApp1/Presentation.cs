@@ -16,8 +16,10 @@ namespace WindowsFormsApp1
 {
     public partial class Inställningar : Form
     {
-        
+
         RSSReader RSSReader = new RSSReader();
+        Validator Validator = new Validator();
+
 
         public Inställningar()
         {
@@ -54,7 +56,7 @@ namespace WindowsFormsApp1
                 }
             }
 
-            
+
 
             lstBoxCategories.DataSource = Cate2;
             lstBoxCategories.DisplayMember = "CateName";
@@ -73,7 +75,7 @@ namespace WindowsFormsApp1
             timerDay.Start();
         }
 
-       public async void timerMinAsync(object sender, EventArgs e)
+        public async void timerMinAsync(object sender, EventArgs e)
         {
             int time = 60000;
 
@@ -140,11 +142,11 @@ namespace WindowsFormsApp1
             {
                 var category = lstBoxCategories.SelectedItem as Category;
 
-                        lstBoxPodcast.DataSource = Podcast.PodList
-                    .Where(items => items.Category.Equals(category.CateName))
-                    .ToList();
-                        lstBoxPodcast.DisplayMember = "Titel";
-                    
+                lstBoxPodcast.DataSource = Podcast.PodList
+            .Where(items => items.Category.Equals(category.CateName))
+            .ToList();
+                lstBoxPodcast.DisplayMember = "Titel";
+
             }
         }
 
@@ -156,35 +158,53 @@ namespace WindowsFormsApp1
             {
                 Podcast selectedItem = lstBoxPodcast.SelectedItem as Podcast;
                 string url = selectedItem.URL;
-                
+
 
                 lstBoxEpisode.DataSource = null;
                 lstBoxEpisode.DataSource = selectedItem.Episodes;
                 lstBoxEpisode.DisplayMember = "titel";
             }
         }
-        
+
 
         private void lstBoxEpisode_DoubleClick(object sender, EventArgs e)
         {
-
-            var chosenEpisode = lstBoxEpisode.SelectedItem as Episode;
-            lblShowMore.Text = chosenEpisode.description;
-
-            Episode episodeLink = lstBoxEpisode.SelectedItem as Episode;
-            var valdLink = episodeLink.link;
-            Episode titel = lstBoxEpisode.SelectedItem as Episode;
-            var namn = titel.titel;
-            string fileLocation = Environment.CurrentDirectory + namn + ".mp3";
-            using (var client = new WebClient())
+            try
             {
-                lblDownload.Text = "Filen laddas ner...";
-                client.DownloadFile(valdLink, fileLocation);
-                MessageBox.Show("Filen har nu laddats ner");
-            }
+                if (lstBoxEpisode != null)
+                {
+                    var chosenEpisode = lstBoxEpisode.SelectedItem as Episode;
+                    lblShowMore.Text = chosenEpisode.description;
 
-                lblDownload.Text = "";  
+                    Episode episodeLink = lstBoxEpisode.SelectedItem as Episode;
+                    var valdLink = episodeLink.link;
+                    Episode titel = lstBoxEpisode.SelectedItem as Episode;
+                    var namn = titel.titel;
+                    string fileLocation = Environment.CurrentDirectory + namn + ".mp3";
+
+                    using (var client = new WebClient())
+                    {
+                        lblDownload.Text = "Filen laddas ner...";
+                        client.DownloadFile(valdLink, fileLocation);
+                        MessageBox.Show("Filen har nu laddats ner");
+                    }
+
+                    lblDownload.Text = "";
+
+                    string played = "NEJ";
+
+                    if (chosenEpisode.ListenedTo)
+                    {
+                        played = "JA";
+                    }
+
+                    lblListned.Text = "Har lyssnat på: " + played;
+                }
+            }
+            catch
+            { }
         }
+    
 
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
@@ -217,5 +237,7 @@ namespace WindowsFormsApp1
             PodcastSerializer serializer = new PodcastSerializer();
             serializer.Serialize(Podcast.PodList);
         }
+
+
     }
 }
