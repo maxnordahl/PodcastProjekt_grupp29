@@ -29,6 +29,9 @@ namespace WindowsFormsApp1
             cmBoxCateName.DataSource = Cate2;
             cmBoxCateName.DisplayMember = "CateName";
 
+            cmBoxCateName2.DataSource = Cate2;
+            cmBoxCateName2.DisplayMember = "CateName";
+
             cmBoxPods.DataSource = null;
             cmBoxPods.DataSource = PodList;
             cmBoxPods.DisplayMember = "Titel";
@@ -82,6 +85,55 @@ namespace WindowsFormsApp1
             cmBoxCateName.DataSource = null;
             cmBoxCateName.DataSource = Cate2;
             cmBoxCateName.DisplayMember = "CateName";
+        }
+
+        private async void btnChangeURL_Click(object sender, EventArgs e)
+        {
+            var oldPod = cmBoxPods.SelectedItem as Logic.Podcast;
+            string newURL = txtBoxNewURL.Text;
+
+            oldPod.URL = newURL;
+
+            MessageBox.Show("URL för Podcast " + oldPod.Titel + " har ändrats");
+
+            Logic.RSSReader reader = new Logic.RSSReader();
+            var newEpisodeList = await reader.getFeed(newURL);
+
+            oldPod.Episodes = newEpisodeList;
+
+            cmBoxPods.DataSource = null;
+            cmBoxPods.DataSource = PodList;
+            cmBoxPods.DisplayMember = "Titel";
+        }
+
+        private void btnChangeIntervalPod_Click(object sender, EventArgs e)
+        {
+
+            var pod = cmBoxPods.SelectedItem as Logic.Podcast;
+            var chosenUpdate = cmBoxNewInterval.SelectedItem;
+            string chosenUpdateString = chosenUpdate.ToString().Replace("Varje minut", "60000").Replace("Varje timme", "3600000").Replace("Varje dag", "216000000");
+            int updateInterval = int.Parse(chosenUpdateString);
+
+            pod.UpdateInterval = updateInterval;
+
+            MessageBox.Show("Uppdateringsintervallen är ändrad till " + cmBoxPods.Text);
+
+        }
+
+        private void btnChangePodName_Click(object sender, EventArgs e)
+        {
+            var newName = txtBoxNewPodName.Text;
+
+            var podObject = cmBoxPods.SelectedItem as Logic.Podcast;
+            var oldName = podObject.Titel;
+
+            podObject.Titel = newName;
+
+            MessageBox.Show("Podcastnamnet " + oldName + " har ändrats till " + newName);
+
+            cmBoxPods.DataSource = null;
+            cmBoxPods.DataSource = PodList;
+            cmBoxPods.DisplayMember = "Titel";
         }
     }
 }

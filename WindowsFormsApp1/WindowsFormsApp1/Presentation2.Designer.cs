@@ -109,7 +109,6 @@
             this.txtBoxURL.Name = "txtBoxURL";
             this.txtBoxURL.Size = new System.Drawing.Size(293, 20);
             this.txtBoxURL.TabIndex = 7;
-            this.txtBoxURL.TextChanged += new System.EventHandler(this.txtBoxURL_TextChanged);
             // 
             // lblURL
             // 
