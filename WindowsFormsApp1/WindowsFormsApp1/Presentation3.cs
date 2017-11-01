@@ -58,8 +58,27 @@ namespace WindowsFormsApp1
             string PodName = cmBoxPods.Text;
             PodList.Remove(cmBoxPods.SelectedItem as Logic.Podcast);
             MessageBox.Show("Podcast" + PodList + "har tagits bort.");
-           //Podcast removePod = 
-            //Logic.Podcast.PodList.Remove(removePod);
+
+            cmBoxPods.DataSource = null;
+            cmBoxPods.DataSource = PodList;
+            cmBoxPods.DisplayMember = "Titel";
+        }
+
+        private void btnChangeCateName_Click(object sender, EventArgs e)
+        {
+
+            var cateObject = cmBoxCateName.SelectedItem as Logic.Category;
+            var oldCateName = cateObject.CateName;
+
+            string newCateName = txtBoxNewName.Text;
+
+            cateObject.CateName = newCateName;
+
+            MessageBox.Show("Kategorinamnet " + oldCateName + " har ändrats till " + newCateName);
+
+            cmBoxCateName.DataSource = null;
+            cmBoxCateName.DataSource = Cate2;
+            cmBoxCateName.DisplayMember = "CateName";
         }
     }
 }
