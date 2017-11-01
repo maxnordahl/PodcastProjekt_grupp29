@@ -18,6 +18,7 @@ namespace Logic
         [XmlElement("Description")]
         public string description { get; set; }
 
+
     }
 
 }

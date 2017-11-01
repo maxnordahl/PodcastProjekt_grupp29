@@ -140,7 +140,7 @@
             // lblDownload
             // 
             this.lblDownload.AutoSize = true;
-            this.lblDownload.Location = new System.Drawing.Point(914, 642);
+            this.lblDownload.Location = new System.Drawing.Point(1355, 263);
             this.lblDownload.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDownload.Name = "lblDownload";
             this.lblDownload.Size = new System.Drawing.Size(0, 20);
@@ -149,7 +149,7 @@
             // lblShowMore
             // 
             this.lblShowMore.AutoSize = true;
-            this.lblShowMore.Location = new System.Drawing.Point(324, 714);
+            this.lblShowMore.Location = new System.Drawing.Point(573, 741);
             this.lblShowMore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblShowMore.Name = "lblShowMore";
             this.lblShowMore.Size = new System.Drawing.Size(0, 20);
